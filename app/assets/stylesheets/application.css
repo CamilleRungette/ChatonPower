@@ -30,3 +30,14 @@
 	box-shadow: 5px 5px 5px #c5c8cc; 
 
 }
+
+.show-card {
+	max-width: 70%;
+	min-width: 40%;
+	margin: auto;
+	margin-top: 6%;
+}
+
+.show-img {
+	width: 100%;
+}
