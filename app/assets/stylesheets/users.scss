@@ -2,14 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-
 .img-cat-signup{
-	display: block;
+	vertical-align: middle;
 	width: 90%;
-	margin: 50px auto;
+	margin: 20% auto;
+	border-radius: 2%;
 }
 
+#login-title, #signup-title {
+	margin: 0 auto;
+	padding-left: 22%;
+}
 
+.form-actions {
+	margin: 0 auto;
+}
+
+.modal-body {
+	margin-top: 12%;
+	margin-left: 5%;
+}
 
 
