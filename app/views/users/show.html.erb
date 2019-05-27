@@ -1,2 +1,35 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+    </title>
+  </head>
+  <body>
+  <div class="card show-card">
+    <h3 class="card-header">Welcome to you profile:</h3>
+    <div class="card-body">
+      <h5 class="card-title"> <%= @user.first_name %> <%= @user.last_name %> </h5>
+      <h6 class="card-subtitle text-muted">Member since: <%= @user.created_at %></h6>
+    </div>
+    <img src ="https://images.unsplash.com/photo-1489779162738-f81aed9b0a25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1082&q=80" class="show-img">
+    <div class="card-body">
+      <p class="card-text"></p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"> Number of orders : X</li>
+      <li class="list-group-item">Contact <%= @user.email %></li>
+    </ul>
+    <div class="card-body">
+      <a href="/" class="card-link">Home Page</a>
+      <a href="#" class="card-link">My orders</a>
+    </div>
+    <div class="card-footer text-muted">
+      2 days ago
+    </div>
+  </div>
+  </div>
+
+  </body>
+</html>
+
+
