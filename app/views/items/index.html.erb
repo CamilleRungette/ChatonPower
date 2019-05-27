@@ -1,2 +1,26 @@
-<h1>Items#index</h1>
-<p>Find me in app/views/items/index.html.erb</p>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+
+	<body>
+
+	<div>
+		<h1>BANIERE</h1>
+		<div class="flex-container">
+			<% @item.each do |item| %>
+				<% @title = item.title %>
+				<% @price = item.price %>
+				<% @image = item.image_url %>
+				<div>
+				<%= render "layouts/card" %></div> <br/> <br/>
+			<% end %>
+		</div>
+	</div>
+
+	</body>
+</html>
+
+
+
