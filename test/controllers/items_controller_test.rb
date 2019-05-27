@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class ItemsControllerTest < ActionDispatch::IntegrationTest
+<<<<<<< HEAD
   setup do
     @item = items(:one)
   end
@@ -45,4 +46,11 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to items_url
   end
+=======
+  test "should get index" do
+    get items_index_url
+    assert_response :success
+  end
+
+>>>>>>> 2a9e5024289815355f828e6f81d0edac2c0918dd
 end

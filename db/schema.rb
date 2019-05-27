@@ -10,11 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_05_27_115637) do
+=======
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 2019_05_27_085048) do
+=======
+ActiveRecord::Schema.define(version: 2019_05_27_093139) do
+>>>>>>> c4b76d0086a588fde0bc875c40eba100dad45c94
+>>>>>>> 2a9e5024289815355f828e6f81d0edac2c0918dd
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -38,9 +47,30 @@ ActiveRecord::Schema.define(version: 2019_05_27_115637) do
 
   create_table "items", force: :cascade do |t|
     t.string "image_url"
+=======
+<<<<<<< HEAD
+  create_table "items", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.float "price"
+    t.string "image_url"
+=======
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+>>>>>>> c4b76d0086a588fde0bc875c40eba100dad45c94
+>>>>>>> 2a9e5024289815355f828e6f81d0edac2c0918dd
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+=======
+>>>>>>> 2a9e5024289815355f828e6f81d0edac2c0918dd
 end
