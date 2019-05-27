@@ -35,28 +35,41 @@
 }
 
 .card-content {
-	height: 310px; 
-	max-width: 350px; 
+	height: 19.375em; 
+	max-width: 21.875em; 
 	box-shadow: 5px 5px 5px #c5c8cc; 
 
 }
 
 
 .banner{
-	height: 310px; 
+	height: 25em; 
 	width: 100%;
 	background-image: url("https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1575&q=80");
 	background-position: center;
+	background-size: 100%;
+}
+
+.title-banner{
+	text-align: center;
+	color: #ffffff;
+	letter-spacing: 0.4em;
+	word-spacing: 0.8em;
+	text-shadow: 5px 5px black;
+	font-size: 4.375em;
+	font-weight: bold;
+	position: relative;
+	top: 2.5em;
 }
 
 .text-banner{
-	text-align: center;
 	color: #ffffff;
-	letter-spacing: 10px;
-	word-spacing: 20px;
-	text-shadow: 5px 5px black;
-	font-size: 70px;
-	font-weight: bold;
+	letter-spacing: 1%;
+	word-spacing: 5%;
+	font-size: 2em;
+	font-style: italic;
 	position: relative;
-	top: 50%;
+	top: 7em;
+	text-align: center;
+
 }
