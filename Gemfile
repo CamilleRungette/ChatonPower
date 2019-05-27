@@ -7,6 +7,7 @@ gem 'dotenv'
 gem 'faker'
 gem 'table_print'
 gem 'better_errors'
+
 gem 'cloudinary', '~> 1.11', '>= 1.11.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
