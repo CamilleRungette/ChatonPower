@@ -36,6 +36,7 @@
 	height: 310px; 
 	width: 100%;
 	background-image: url("https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1575&q=80");
+	background-position: center;
 }
 
 .text-banner{
