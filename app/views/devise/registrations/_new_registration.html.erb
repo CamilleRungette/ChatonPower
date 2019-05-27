@@ -1,0 +1,68 @@
+<div class="modal fade" id="modalSignup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="signup-title">Sign up</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+
+      <div class="row">
+
+        <div class="col-6">
+          <div class="modal-body">
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+
+            <div class="form-inputs">
+
+              <div class="field form-group">
+                <%= f.label :first_name %><br />
+                <%= f.email_field :first_name, class: "form-control", autofocus: true, autocomplete: "first_name", placeholder: "Gégé" %>
+              </div>  
+
+              <div class="field form-group">
+                <%= f.label :last_name %><br />
+                <%= f.email_field :last_name, class: "form-control", autocomplete: "last_name", placeholder: "Depardieux"%>
+              </div>
+
+              <div class="field form-group">
+                <%= f.label :email %><br />
+                <%= f.email_field :email, class: "form-control", autocomplete: "email", placeholder: "gege.depardieux@alcool.ru" %>
+              </div>
+
+              <div class="field form-group">
+                <%= f.label :password %>
+                <% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <% end %><br />
+                <%= f.password_field :password, class: "form-control", autocomplete: "new-password" %>
+              </div>
+
+              <div class="field form-group">
+                <%= f.label :password_confirmation %><br />
+                <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "new-password" %>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="form-img col-6">
+          <img class="img-cat-signup" src="https://img.huffingtonpost.com/asset/561549ff1400002900bfc5a7.jpeg?ops=scalefit_720_noupscale" alt="welcome-cat">
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <div class="form-actions">
+          <%= f.submit "Sign up", class: "btn btn-primary"%>
+        </div>
+        <% end %>
+
+      </div>
+
+
+      
+
+    </div>
+  </div>
+</div>
