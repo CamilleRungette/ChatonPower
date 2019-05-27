@@ -1,0 +1,29 @@
+<h1>Page Profil</h1>
+
+<p>Bienvenue sur la page d'ajout d'un avatar pour le User portant l'id : <%=@item.id%></p>
+<h3>Avatar actuel</h3>
+<%if @item.avatar.attached?%>
+  <%= image_tag @item.avatar, alt: 'avatar' %>
+<%else%>
+  <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
+<%end%>
+
+<h3>Changer d'avatar ?</h3>
+<%= form_tag item_avatars_path(@item), multipart: true do %>
+  <%= file_field_tag :avatar %>
+  <%= submit_tag "mettre à jour" %>
+<% end %>
+
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @item.image_url %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>
+
+<%= image_tag "cat2.jpeg" %>
