@@ -1,15 +1,26 @@
-<div class="row"  style="margin-left: 50px;">
-<%= render "layouts/card" %>
-<%= render "layouts/card" %>
-<%= render "layouts/card" %>
-</div>
-<div class="row">
-<%= render "layouts/card" %>
-<%= render "layouts/card" %>
-<%= render "layouts/card" %>
-</div>
-<div class="row">
-<%= render "layouts/card" %>
-<%= render "layouts/card" %>
-<%= render "layouts/card" %>
-</div>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+
+	<body>
+
+	<div>
+		<h1>BANIERE</h1>
+		<div class="flex-container">
+			<% @item.each do |item| %>
+				<% @title = item.title %>
+				<% @price = item.price %>
+				<% @image = item.image_url %>
+				<div>
+				<%= render "layouts/card" %></div> <br/> <br/>
+			<% end %>
+		</div>
+	</div>
+
+	</body>
+</html>
+
+
+

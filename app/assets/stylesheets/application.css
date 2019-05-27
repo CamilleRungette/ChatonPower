@@ -14,4 +14,19 @@
  *= require_self
  */
 
- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+.flex-container {
+	max-width: 70%;
+	margin: auto;	
+	display: flex;
+	flex-wrap: wrap;
+	padding: auto;
+	justify-content: space-around;
+}
+
+.card-content {
+	height: 310px; 
+	max-width: 350px; 
+	box-shadow: 5px 5px 5px #c5c8cc; 
+
+}
