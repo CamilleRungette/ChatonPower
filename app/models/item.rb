@@ -2,7 +2,7 @@ class Item < ApplicationRecord
   # TODO: allow minimum char for title to be eq. to 3
   validates :title,
   presence: true,
-  length: { in: 5..30 }
+  length: { in: 4..30 }
 
   validates :description,
   presence: true,
