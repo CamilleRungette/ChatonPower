@@ -35,8 +35,7 @@
 .banner{
 	height: 310px; 
 	width: 100%;
-	background-image: url("https://cdn.pixabay.com/photo/2015/10/17/11/01/knit-992379_960_720.jpg");
-	background-size: cover;
+	background-image: url("https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1575&q=80");
 }
 
 .text-banner{
@@ -44,9 +43,9 @@
 	color: #ffffff;
 	letter-spacing: 10px;
 	word-spacing: 20px;
-	text-shadow: 3px 2px black;
+	text-shadow: 5px 5px black;
 	font-size: 70px;
-	
-
-
+	font-weight: bold;
+	position: relative;
+	top: 50%;
 }
