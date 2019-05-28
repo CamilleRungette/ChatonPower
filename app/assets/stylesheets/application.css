@@ -33,6 +33,7 @@
  }
 
  .video-container {
+ 	background-size: cover;
  	position: absolute;
  	top: 0;
  	left: 0;
