@@ -42,7 +42,6 @@
 		</div>  
 	</li>
 	<% end %>
-<<<<<<< HEAD
 	</ul>
 	
 		<div class="total">
@@ -53,17 +52,4 @@
 			<hr class="total-bar" >
 			<h5 class="total-cart">Sous-total (<%= @items.count %> articles) : <span class="price-color"><%= count%>€</span></h5>
 		</div>
-=======
-</ul>
->>>>>>> db7deecd93ba291d9631cee571859ba576bfa903
-
-<div class="total">
-	<% count = 0.0 %>
-	<% @items.each do |item|%>
-	<% count += item.price %>
-	<% end %>
-	<hr class="total-bar" >
-	<h5 class="total-cart">Sous-total (<%= @items.count %> articles) : <%= count%>€ </h5>
-</div>
-
 <% end %>
