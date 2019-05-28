@@ -19,7 +19,7 @@
 				<div class="quantity-button">
 				<span class="badge badge-primary badge-pill">14</span>
 				</div>   
-				<%= link_to "", root_path, class:"fas fa-trash-alt" %>
+				<%= link_to "", item_path(item.id) ,class:"fas fa-trash-alt", method: :delete %>
 			</li>
 		</ul>
 
