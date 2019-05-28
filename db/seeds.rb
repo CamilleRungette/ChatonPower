@@ -26,14 +26,14 @@ end
 5.times do
 	first_name = Faker::Name.first_name
 	last_name = Faker::Name.last_name
-	User.create!(
+	user = User.create!(
 		first_name: first_name,
 		last_name: last_name,
 		email: first_name + last_name + "@gmail.com",
 		password: "foobar"
 		)
     Cart.create!(
-      user_id: User.all.sample.id
+      user_id: user.id
     )
 end
 
@@ -46,6 +46,6 @@ end
 
 5.times do
   Order.create(
-    cart_id: Cart.all.sample.id
+    user_id: User.all.sample.id
   )
 end
