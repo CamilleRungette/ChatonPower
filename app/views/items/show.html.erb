@@ -16,7 +16,7 @@
     </ul>
     <div class="card-body">
       <a href="/" class="card-link">Home Page</a>
-      <a href="#" class="card-link">Add to cart</a>
+      <%= link_to "Add to cart", item_path(@item.id), method: 'put', class:"card-link" %>
     </div>
     <div class="card-footer text-muted">
       2 days ago

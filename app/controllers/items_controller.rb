@@ -7,6 +7,12 @@ class ItemsController < ApplicationController
   	@item = Item.find(params[:id])
   end
 
+  def update
+    @item = Item.find(params[:id])
+    JoinTableCartItem.create!(cart_id: current_user.id, item_id: @item.id)
+    redirect_to root_path
+  end
+
   def destroy
     @item = User.find(current_user.id).cart.items.find(params[:id])
     @cart = JoinTableCartItem.where(cart_id: current_user.cart).find_by(item_id: @item.id)
