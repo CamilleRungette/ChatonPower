@@ -156,3 +156,35 @@
  	width: 100%;
  }
 
+/* Index du panier */
+
+ .product-image{
+    align-content: right; 
+    height: 10em; 
+    max-width: 15em;
+    margin-right: 1.5em;
+}
+
+.item-details-container{
+    display: flex;
+    width: 50%;
+}
+
+.list-checkout-cart{
+    height: 10%;
+}
+
+.item-title-description{
+display : flex;
+flex-direction: column;
+justify-content : center;
+}
+
+.price-container{
+    width: 30%;
+}
+
+.quantity-button{
+    width: 20%;
+}
+

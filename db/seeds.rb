@@ -7,12 +7,19 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
+require 'activerecord-reset-pk-sequence'
 
 Item.destroy_all
 User.destroy_all
 Cart.destroy_all
 JoinTableCartItem.destroy_all
 Order.destroy_all
+
+Item.reset_pk_sequence
+User.reset_pk_sequence
+Cart.reset_pk_sequence
+JoinTableCartItem.reset_pk_sequence
+Order.reset_pk_sequence
 
 5.times do
   Item.create!(
