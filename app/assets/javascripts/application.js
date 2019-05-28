@@ -15,3 +15,12 @@
 //= require rails-ujs
 //= require activestorage
 //= require_tree .
+
+$(function () {
+	$(document).scroll(function () {
+		var $nav = $(".fixed-top");
+		var $link = $(".nav-link");
+		$nav.toggleClass('scrolled', $(this).scrollTop() > $(".banner").height());
+		$link.toggleClass('scrolled', $(this).scrollTop() > $(".banner").height());
+	});
+});

@@ -19,6 +19,10 @@
  	scroll-behavior: smooth;
  }
 
+ .space {
+ 	height: 500px;
+ }
+
  .fixed-top.scrolled {
  	background-color: #79C2AD !important;
  	transition: background-color 200ms linear;
@@ -29,6 +33,7 @@
  }
 
  .video-container {
+ 	background-size: cover;
  	position: absolute;
  	top: 0;
  	left: 0;
