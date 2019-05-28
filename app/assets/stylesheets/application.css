@@ -217,10 +217,11 @@
 
 .trash-div{
     margin: 5px 10px;
+    color: #F3969A;
 }
 
 .trash{
-    color: #78C2AD;
+    color: #F3969A;
 }
 
 .description-text-item{
@@ -244,4 +245,10 @@ hr {
 
 .price-color{
     color: #78C2AD;
+}
+
+.footer{
+  background-color: #F3969A;
+  text-align: center;
+  color: black;
 }
