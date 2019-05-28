@@ -17,8 +17,10 @@ ActiveRecord::Schema.define(version: 2019_05_28_095053) do
 
   create_table "carts", force: :cascade do |t|
     t.bigint "user_id"
+    t.bigint "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_carts_on_order_id"
     t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
@@ -41,10 +43,10 @@ ActiveRecord::Schema.define(version: 2019_05_28_095053) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.bigint "cart_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["cart_id"], name: "index_orders_on_cart_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -61,5 +63,5 @@ ActiveRecord::Schema.define(version: 2019_05_28_095053) do
 
   add_foreign_key "join_table_cart_items", "carts"
   add_foreign_key "join_table_cart_items", "items"
-  add_foreign_key "orders", "carts"
+  add_foreign_key "orders", "users"
 end
