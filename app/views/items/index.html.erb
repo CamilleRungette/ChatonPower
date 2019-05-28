@@ -1,29 +1,27 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title></title>
-	</head>
-
-	<body>
-
-	<div>
-		<div class="banner">		
-			<div>
-			<h1 class="title-banner">CHATON POWER.</h1>
-			<p class="text-banner">De la merde</p>
-			</div>
-		</div><br /><br />
-		
-		<div class="flex-container">
-			<% @item.each do |item| %>
-				<% @title = item.title %>
-				<% @price = item.price %>
-				<% @image = item.image_url %>
-				<div>
-				<%= render "layouts/card" %></div> <br/> <br/>
-			<% end %>
-		</div>
+<div class="video-container">
+	<div class="banner">
+		<%= video_tag "cat.mp4", controls: false, autoplay: true, muted: true, loop: true, id: "home-video"  %>
 	</div>
+</div>
 
-	</body>
-</html>
+<div class="banner-text">
+	<div class="typing">
+		<h1 class="title-banner">CHATON POWER.</h1>
+	</div>
+	<p class="text-banner">De la merde <br/><a class="btn btn-secondary" href="#section2" id="scroll-button">Scroll</a>
+	</p>
+</div>
+
+<div class="space">
+</div>
+
+<div class="flex-container" id="section2">
+	<% @item.each do |item| %>
+	<% @title = item.title %>
+	<% @price = item.price %>
+	<% @image = item.image_url %>
+	<% @id = item.id %>
+	<div>
+		<%= render "layouts/card" %></div> <br/> <br/>
+		<% end %>
+	</div>
