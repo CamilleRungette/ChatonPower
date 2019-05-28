@@ -47,7 +47,7 @@
 		<% count += item.price %>
 		<% end %>
 			<hr class="total-bar" >
-			<h5 class="total-cart">Sous-total (<%= @items.count %> articles) : <%= count%>€ </h5>
+			<h5 class="total-cart">Sous-total (<%= @items.count %> articles) : <span class="price-color"><%= count%>€</span></h5>
 		</div>
 
 		<% else%>
