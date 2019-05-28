@@ -4,5 +4,8 @@
   <div class="card-body" >
 
     <p class="card-text" style="float:left;"> <%= @price%> € </p> 
-    <%= link_to "Plus d'infos", item_path(@id), style: "float:right"%>  </div>
+    <%= link_to "Plus d'infos", item_path(@id), style: "float:right"%>
+
+     <%= link_to "", item_path(@id), method: 'put', class:"card-link, fas fa-shopping-cart", style: "float:right" %>
+     </div>
 </div> <br/> <br/>
