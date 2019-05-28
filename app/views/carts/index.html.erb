@@ -40,11 +40,11 @@
 					</div>
 				</div>
 			</div>
-		</div>  
+		</div>
 	</li>
 	<% end %>
 	</ul>
-	
+
 		<div class="total">
 		<% count = 0.0 %>
 		<% @items.each do |item|%>
@@ -52,5 +52,8 @@
 		<% end %>
 			<hr class="total-bar" >
 			<h5 class="total-cart">Sous-total (<%= @items.count %> articles) : <span class="price-color"><%= count%>€</span></h5>
+			<button type="button" class="total-cart" name="button">
+				<%= link_to "Confirmer la commande", controller: :orders, action: :show, user_id: @user.id, cart_id: @user.cart.id, id: @user.id %>
+			</button>
 		</div>
 <% end %>

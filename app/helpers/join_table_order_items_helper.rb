@@ -1,0 +1,2 @@
+module JoinTableOrderItemsHelper
+end
