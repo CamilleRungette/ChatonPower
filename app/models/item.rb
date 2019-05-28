@@ -1,4 +1,6 @@
 class Item < ApplicationRecord
+  has_many :join_table_cart_item, dependent: :destroy
+  has_many :carts, through: :join_table_cart_item
   # TODO: allow minimum char for title to be eq. to 3
   validates :title,
   presence: true,

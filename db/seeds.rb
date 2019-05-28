@@ -10,8 +10,11 @@ require 'faker'
 
 Item.destroy_all
 User.destroy_all
+Cart.destroy_all
+JoinTableCartItem.destroy_all
+Order.destroy_all
 
-20.times do
+5.times do
   Item.create!(
     title: Faker::Creature::Cat.name + " " + Faker::Creature::Cat.name,
     description: "lorem ipsum",
@@ -20,7 +23,7 @@ User.destroy_all
   )
 end
 
-20.times do 
+5.times do
 	first_name = Faker::Name.first_name
 	last_name = Faker::Name.last_name
 	User.create!(
@@ -29,4 +32,20 @@ end
 		email: first_name + last_name + "@gmail.com",
 		password: "foobar"
 		)
+    Cart.create!(
+      user_id: User.all.sample.id
+    )
+end
+
+20.times do
+  JoinTableCartItem.create(
+    cart_id: Cart.all.sample.id,
+    item_id: Item.all.sample.id
+  )
+end
+
+5.times do
+  Order.create(
+    cart_id: Cart.all.sample.id
+  )
 end
