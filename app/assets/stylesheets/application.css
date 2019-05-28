@@ -19,6 +19,10 @@
  	scroll-behavior: smooth;
  }
 
+ h1::selection, h3::selection, p::selection, .nav-link::selection, a::selection {
+    background: #F3969A;
+ }
+
  .space {
  	height: 500px;
  }
