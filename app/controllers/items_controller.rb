@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    JoinTableCartItem.create!(cart_id: current_user.id, item_id: @item.id)
+    JoinTableCartItem.create!(cart_id: current_user.cart.id, item_id: @item.id)
     redirect_to root_path
   end
 
