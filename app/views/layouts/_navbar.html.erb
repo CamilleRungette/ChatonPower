@@ -6,10 +6,10 @@
 
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav ml-auto">
+      <% if user_signed_in? %>
       <li class="nav-item">
         <%= link_to "Cart", user_carts_path(current_user.id), class: "nav-link" %>
       </li>
-      <% if user_signed_in? %>
       <li class="nav-item">
         <%= link_to "Profile", root_path, class: "nav-link" %>
       </li>
