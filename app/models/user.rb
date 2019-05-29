@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  extend FriendlyId
+  friendly_id :first_name, use: :slugged
+
   after_create :welcome_send
   has_one :cart, dependent: :destroy
   has_many :orders, dependent: :destroy
