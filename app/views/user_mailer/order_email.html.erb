@@ -10,10 +10,12 @@
 		<h4>Here is the content of your order : (<%= @items.count %> ) </h4>
 		<p>
 			<% @items.each do |item| %>
-			<%= item.title %> - <%= item.price %> 
+			<%= item.title %> - <%= item.price %> <br/>
 			<% end %>
 		</p>
 
+<p>Thank you for trusting us !<br/>
+RRCSS&copy Team</p>
 
 	</body>
 	</html>
