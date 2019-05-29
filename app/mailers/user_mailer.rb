@@ -5,7 +5,7 @@ class UserMailer < ApplicationMailer
     @user = user
     @url = "https://chaton-power.herokuapp.com"
 
-    mail(to: @user.eamil, subject: "Welcome to Chaton-power !")
+    mail(to: @user.email, subject: "Welcome to Chaton-power !")
   end
 
 end
