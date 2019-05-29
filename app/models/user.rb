@@ -7,7 +7,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-	after_create :create_cart
+	after_create :create_cart, :welcome_send
 
   private
   def create_cart
