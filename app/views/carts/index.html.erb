@@ -55,11 +55,13 @@
 		<% end %>
 			<hr class="total-bar" >
 			<h5 class="total-cart">Sous-total (<%= @items.count %> articles) : <span class="price-color"><%= count%>€</span></h5>
+			
 
-			<button type="button" class="total-cart" name="button">
-				<%= link_to "Confirmer la commande", controller: :orders, action: :show, user_id: @user.id, cart_id: @user.cart.id, id: @user.id %>
-			</button>
+			<%= link_to "Checkout", new_user_cart_order_path(current_user.id, current_user.cart.id), class: "btn btn-outline-primary total-cart", id: "checkout-button" %>	
 
-			<%= link_to "Pay", new_user_cart_order_path(current_user.id, current_user.cart.id ) %>
+			
+
+			
+			
 		</div>
 <% end %>
