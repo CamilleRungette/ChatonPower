@@ -43,6 +43,7 @@ class OrdersController < ApplicationController
         item_id: item.id
       )
     end
+
     @cart.items.clear
     @total = Array.new
     @order.items.each do |item|
@@ -50,4 +51,5 @@ class OrdersController < ApplicationController
     end
     @total = @total.inject(:+)
   end
+
 end

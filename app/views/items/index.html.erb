@@ -8,9 +8,9 @@
 	<div class="typing">
 		<h1 class="title-banner">CHATON POWER.</h1>
 	</div>
-		<%= javascript_include_tag 'application' %>
+	<%= javascript_include_tag 'application' %>
 
-<br/>
+	<br/>
 	<p class="text-banner">You love cats? Us too. Welcome to paradise. <br/><a class="btn btn-secondary" href="#section2" id="scroll-button">See our pictures </a>
 	</p>
 </div>
@@ -23,8 +23,8 @@
 <br/> <br/>
 <br/> <br/>
 
-	<h1 class="index-title"> Pick you favorite:</h1>
-	<br/>
+<h1 class="index-title"> Pick you favorite:</h1>
+<br/>
 <div class="flex-container" id="section2">
 	<% @item.each do |item| %>
 	<% @title = item.title %>
@@ -32,6 +32,10 @@
 	<% @image = item.image_url %>
 	<% @id = item.id %>
 	<div>
-		<%= render "card" %></div> <br/> <br/>
-		<% end %>
-	</div>
+		<%= render "card" %>
+	</div> <br/> <br/>
+	<% end %>
+</div>
+
+<%= render "layouts/footer"%>
+

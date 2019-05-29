@@ -1,0 +1,8 @@
+New order n° <%= @order.id%>
+
+	The customer <%= @user.id %> just ordered <%= @items.count %> items :
+		<% @items.each do |item| %>
+		- <%= item.title %>: <%= item.price %> €
+		<% end %>
+	
+	Total price: <%= @count %>
