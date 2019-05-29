@@ -283,7 +283,7 @@ hr {
   width: 100%;
 }
 
-body {
-  position: relative;
-  top: 0;
+#page-container {  
+  position: relative;  
+  min-height: 100vh;
 }
