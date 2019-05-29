@@ -17,5 +17,17 @@ class UserMailer < ApplicationMailer
     mail(to: @current_user.email, subject: "Thank you for your order !")
   end
 
+  def admin_order_email(order)
+    @order = order
+    @user = order.user
+    @items = @user.cart.items
+    @count = 0.0
+      @items.each do |item|
+      @count += item.price
+      end
+    @url = "https://chaton-power.herokuapp.com"
+    mail(to: "chaton-power@yopmail.com", subject: "New order :")
+  end
+
 end
 
