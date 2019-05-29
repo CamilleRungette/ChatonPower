@@ -51,7 +51,11 @@
  }
 
  .nav-link {
- 	color: #B2B2B2 !important;
+ 	color: #6F7070 !important;
+ } 
+
+ .nav-link:hover {
+  color: #BABBBF !important;
  }
 
  .nav-link.scrolled {
@@ -283,7 +287,35 @@ hr {
   width: 100%;
 }
 
-/*#page-container {  
+
+#page-container {  
   position: relative;  
   min-height: 100vh;
-}*/
+}
+
+body {
+  position: relative;
+  top: 0;
+}
+
+.editCard {
+  padding: 4rem;
+}
+
+#line-edit {
+  margin: 2em ;
+  width: 60%;
+}
+
+.avatar-section {
+  display: flex;
+}
+
+.avatar-profile {
+  justify-content: center;
+}
+
+#empty-cart {
+  margin: 15em;
+}
+

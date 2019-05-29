@@ -9,8 +9,13 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    JoinTableCartItem.create!(cart_id: current_user.cart.id, item_id: @item.id)
-    redirect_to root_path
+    if user_signed_in?
+      @cart = current_user.cart.id
+      JoinTableCartItem.create!(cart_id: @cart, item_id: @item.id)
+      redirect_to root_path
+    else
+      root_path
+    end
   end
 
   def destroy

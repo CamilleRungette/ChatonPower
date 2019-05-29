@@ -5,6 +5,8 @@ ruby '2.5.1'
 
 gem 'dotenv-rails'
 gem 'mailjet'
+# Active storage Amazon 
+gem "aws-sdk-s3", require: false
 gem 'activerecord-reset-pk-sequence'
 gem 'jquery-rails'
 gem 'faker'

@@ -1,36 +1,43 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>
-    </title>
-  </head>
-  <body>
-  <div class="card show-card">
-    <h3 class="card-header">Welcome to you profile:</h3>
-    <div class="card-body">
-      <h5 class="card-title"> <%= @user.first_name %> <%= @user.last_name %> </h5>
-      <h6 class="card-subtitle text-muted">Member since: <%= @user.created_at %></h6>
-    </div>
-    <img src ="https://images.unsplash.com/photo-1489779162738-f81aed9b0a25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1082&q=80" class="profile-img">
-    <div class="card-body">
-      <p class="card-text"></p>
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item"> Number of orders : <%= current_user.orders.count %>
-</li>
-      <li class="list-group-item">Contact: <%= @user.email %></li>
-    </ul>
-    <div class="card-body">
-      <a href="/" class="card-link">Home Page</a>
-      <a href="#" class="card-link">My orders</a>
-    </div>
-    <div class="card-footer text-muted">
-      2 days ago
-    </div>
+<div class="card show-card">
+  <h3 class="card-header">Welcome to you profile:</h3>
+  <div class="card-body">
+    <h5 class="card-title"> <%= @user.first_name %> <%= @user.last_name %> </h5>
+    <h6 class="card-subtitle text-muted">Member since: <%= @user.created_at %></h6>
   </div>
+  
+  <div class="avatar-section">
+    <div class="avatar-profile">
+      <% if @user.avatar.attached? %>
+      <%= image_tag @user.avatar, alt: 'avatar', :class => 'profile-img' %>
+      <%= form_tag user_avatars_path(@user.id), multipart: true do %>
+      <%= file_field_tag :avatar, :class =>"form-control-file", onchange: 'this.form.submit();' %>
+      <% end %>
+      <% else %>
+      <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
+      <%= form_tag user_avatars_path(@user.id), multipart: true do %>
+      <%= file_field_tag :avatar, :class =>"form-control-file", onchange: 'this.form.submit();' %><br>
+      <% end %>
+      <% end %>
+    </div>
   </div>
 
-  </body>
-</html>
+  <div class="card-body">
+    <p class="card-text"></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"> Number of orders : <%= current_user.orders.count %>
+    </li>
+    <li class="list-group-item">Contact: <%= @user.email %></li>
+  </ul>
+  <div class="card-body">
+    <%= link_to 'Home', root_path, class: "card-link" %>
+    <%= link_to 'Edit', edit_user_registration_path, class: "card-link" %>
+  </div>
+  <div class="card-footer text-muted">
+
+  </div>
+</div>
+
+
 
 
