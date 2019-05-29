@@ -7,7 +7,7 @@
       <h5 class="card-title"> &copy <%= Faker::Name.name  %></h5>
       <h6 class="card-subtitle text-muted">Photographer</h6>
     </div>
-    <img src ="<%= @item.image_url %>" class="show-img">
+    <%= image_tag "#{rand(1..10)}.jpeg", alt: "Card image", class: "show-img" %>
     <div class="card-body">
       <p class="card-text"><%= @item.description %></p>
     </div>
