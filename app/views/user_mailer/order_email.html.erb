@@ -5,18 +5,13 @@
 	</head>
 	<body>
 
-		<h1>Hey <%= @user.first_name %> ! Thanks for your order n° <%= @order.id %></h1>
+		<h1>Hey <%= @current_user.first_name %> ! Thanks for your order n° <%= @order.id %></h1>
 
-		<h4>Here is the content of your order : (<%= @order.items.count %> )</h4>
+		<h4>Here is the content of your order : (<%= @items.count %> ) </h4>
 		<p>
-
-		<% if @order.items.count === 1 %>
-		<%= @order.items.title %>
-		<% elsif @order.items.count > 1 %>
-			<% @order.items.each do |item| %>
+			<% @items.each do |item| %>
 			<%= item.title %> - <%= item.price %> 
 			<% end %>
-		<% end %>
 		</p>
 
 
