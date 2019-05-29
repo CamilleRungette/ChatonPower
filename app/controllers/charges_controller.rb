@@ -2,16 +2,18 @@ class ChargesController < ApplicationController
 
 	def new
 		@items = User.find(current_user.id).cart.items
+		@amount = 0	
 		@items.each do |item| 
-			@count += item.price
+			@amount += item.price
 		end 
 	end
 
 	def create
 		@items = User.find(current_user.id).cart.items
+		@amount = 0	
 		@items.each do |item| 
-			@count += item.price
-		end 	
+			@amount += item.price
+		end 
 
 		customer = Stripe::Customer.create({
 			email: params[:stripeEmail],
@@ -20,10 +22,11 @@ class ChargesController < ApplicationController
 
 		charge = Stripe::Charge.create({
 			customer: customer.id,
-			amount: @amount*100,
+			amount: @amount.to_i*100,
 			description: 'Rails Stripe customer',
 			currency: 'eur',
 		})
+
 
 	rescue Stripe::CardError => e
 		flash[:error] = e.message

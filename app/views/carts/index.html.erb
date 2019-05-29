@@ -58,5 +58,6 @@
 			<button type="button" class="total-cart" name="button">
 				<%= link_to "Confirmer la commande", controller: :orders, action: :show, user_id: @user.id, cart_id: @user.cart.id, id: @user.id %>
 			</button>
+			<%= link_to "Pay", new_charge_path %>
 		</div>
 <% end %>
