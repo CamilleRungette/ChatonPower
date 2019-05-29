@@ -12,7 +12,7 @@ amazon:
   access_key_id: <%= ENV['AMAZON_ACCESS_KEY_ID'] %>
   secret_access_key: <%= ENV['AMAZON_SECRET_ACCESS_KEY'] %>
   region: eu-west-3
-  bucket: eventbruh
+  bucket: chaton-p
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:
