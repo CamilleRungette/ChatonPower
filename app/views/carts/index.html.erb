@@ -1,10 +1,13 @@
 <% if @cart == nil || @items.length == 0 %>
 
-<h2>Vous n'avez aucun article dans votre panier !</h2>
+<div class="list-group-item" id="empty-cart">
+	<h2>Vous n'avez aucun article dans votre panier !</h2>
+	<p><%= link_to "Back home", root_path %></p>
+</div>
 
 <% else %>
 
-<h1 class="index-title"> You cart:</h1>
+<h1 class="index-title"> Your cart:</h1>
 
 
 <ul class="list-group-cart">
@@ -14,49 +17,49 @@
 		<div class="item-details-container">
 			<img class="product-image" src="https://images.unsplash.com/photo-1472491235688-bdc81a63246e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
 			<div class="item-title-description">
-			<h3><%= link_to item.title, item_path(item.id)%></h3>
-			<small class="text-muted description-text-item">DESCRIPTION plus longue pour se rendre co;ptre dskjcwdfjknwekjfnwejkbwjkbvkjbwkbfkqhfk</small>
-			</div>
+				<h3><%= link_to item.title, item_path(item.id)%></h3>
+				<small class="text-muted description-text-item">DESCRIPTION plus longue pour se rendre co;ptre dskjcwdfjknwekjfnwejkbwjkbvkjbwkbfkqhfk</small>
 			</div>
 		</div>
+	</div>
 
-		<div class="price-container">
-			<%= item.price %>€
-		</div>
+	<div class="price-container">
+		<%= item.price %>€
+	</div>
 
-		<div class="quantity-button">
-			<div class="form-group">
-				<label for="exampleSelect1">Quantité</label>
-				<div class="inputndelete">
-					<div>
-						<select class="form-control" id="exampleSelect1">
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</div>
+	<div class="quantity-button">
+		<div class="form-group">
+			<label for="exampleSelect1">Quantité</label>
+			<div class="inputndelete">
+				<div>
+					<select class="form-control" id="exampleSelect1">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					</select>
+				</div>
 
-					<div class="trash-div">
-						<%= link_to "", item_path(item.id) ,class:"fas fa-trash-alt", method: :delete %>
-					</div>
+				<div class="trash-div">
+					<%= link_to "", item_path(item.id) ,class:"fas fa-trash-alt", method: :delete %>
 				</div>
 			</div>
 		</div>
-	</li>
-	<% end %>
-	</ul>
+	</div>
+</li>
+<% end %>
+</ul>
 
-		<div class="total">
-		<% count = 0.0 %>
-		<% @items.each do |item|%>
-		<% count += item.price %>
-		<% end %>
-			<hr class="total-bar" >
-			<h5 class="total-cart">Sous-total (<%= @items.count %> articles) : <span class="price-color"><%= count%>€</span></h5>
-			<button type="button" class="total-cart" name="button">
-				<%= link_to "Confirmer la commande", controller: :orders, action: :show, user_id: @user.id, cart_id: @user.cart.id, id: @user.id %>
-			</button>
-		</div>
+<div class="total">
+	<% count = 0.0 %>
+	<% @items.each do |item|%>
+	<% count += item.price %>
+	<% end %>
+	<hr class="total-bar" >
+	<h5 class="total-cart">Sous-total (<%= @items.count %> articles) : <span class="price-color"><%= count%>€</span></h5>
+	<button type="button" class="total-cart" name="button">
+		<%= link_to "Confirmer la commande", controller: :orders, action: :show, user_id: @user.id, cart_id: @user.cart.id, id: @user.id %>
+	</button>
+</div>
 <% end %>

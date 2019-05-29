@@ -296,7 +296,19 @@ body {
   padding: 4rem;
 }
 
-.border {
-  margin-bottom: 2em ;
-  border: 1px solid;
+#line-edit {
+  margin: 2em ;
+  width: 60%;
+}
+
+.avatar-section {
+  display: flex;
+}
+
+.avatar-profile {
+  justify-content: center;
+}
+
+#empty-cart {
+  margin: 20em;
 }
