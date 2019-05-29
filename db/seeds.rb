@@ -21,7 +21,7 @@ Cart.reset_pk_sequence
 JoinTableCartItem.reset_pk_sequence
 Order.reset_pk_sequence
 
-10.times do
+20.times do
   Item.create!(
     title: Faker::Creature::Cat.name + " " + Faker::Creature::Cat.name,
     description: "lorem ipsum",
@@ -54,5 +54,12 @@ end
 10.times do
   Order.create(
     user_id: User.all.sample.id
+  )
+end
+
+20.times do
+  JoinTableOrderItem.create(
+    order_id: Cart.all.sample.id,
+    item_id: Item.all.sample.id
   )
 end
