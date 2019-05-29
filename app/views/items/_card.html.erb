@@ -3,10 +3,10 @@
 	<img style="height: 200px; width: 100%;" src="<%= @image %>" alt="Card image">
 	<div class="card-body" >
 
-		<p class="card-text" style="float:left;"> <%= @price%> € </p> 
-		<%= link_to "Plus d'infos", item_path(@id), style: "float:right"%>
+		<p class="card-text" style="float:left;"> <%= @price%> € </p>
+		<%= link_to "Plus d'infos", item_path(@title), style: "float:right"%>
 		<% if user_signed_in? %>
-		<%= link_to "", item_path(@id), method: 'put', class:"card-link, fas fa-shopping-cart caddie" %>
+		<%= link_to "", item_path(@title), method: 'put', class:"card-link, fas fa-shopping-cart caddie" %>
 		<% else %>
 		<%= link_to '', new_user_session_path, class: "card-link, fas fa-shopping-cart caddie", 'data-toggle' => "modal", 'data-target' => "#modalLogin" %>
 		<% end %>

@@ -9,10 +9,10 @@
     <ul class="navbar-nav ml-auto">
       <% if user_signed_in? %>
       <li class="nav-item">
-        <%= link_to "Cart", user_carts_path(current_user.id), class: "nav-link" %>
-      </li>      
+        <%= link_to "Cart", user_carts_path(current_user), class: "nav-link" %>
+      </li>
      <li class="nav-item">
-      <%= link_to "Profile", user_path(current_user.id), class: "nav-link" %>
+      <%= link_to "Profile", user_path(current_user), class: "nav-link" %>
     </li>
     <li class="nav-item">
       <%= link_to "Log out", destroy_user_session_path, :class => "nav-link", :method => :delete %>
@@ -29,5 +29,3 @@
 </div>
 </nav>
   <br>
-
-

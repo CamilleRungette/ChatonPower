@@ -1,4 +1,7 @@
 class Item < ApplicationRecord
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
   has_many :join_table_cart_item, dependent: :destroy
   has_many :carts, through: :join_table_cart_item
 

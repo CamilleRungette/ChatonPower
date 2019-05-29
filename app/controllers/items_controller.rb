@@ -4,11 +4,12 @@ class ItemsController < ApplicationController
   end
 
   def show
-  	@item = Item.find(params[:id])
+  	@item = Item.friendly.find_by(title: params[:id])
+    
   end
 
   def update
-    @item = Item.find(params[:id])
+    @item = Item.friendly.find_by(title: params[:id])
     if user_signed_in?
       @cart = current_user.cart.id
       JoinTableCartItem.create!(cart_id: @cart, item_id: @item.id)

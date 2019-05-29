@@ -281,7 +281,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   faker
-  friendly_id
+  friendly_id (~> 5.2.4)
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
