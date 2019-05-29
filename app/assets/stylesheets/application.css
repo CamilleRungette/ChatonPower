@@ -51,7 +51,11 @@
  }
 
  .nav-link {
- 	color: #B2B2B2 !important;
+ 	color: #6F7070 !important;
+ } 
+
+ .nav-link:hover {
+  color: #BABBBF !important;
  }
 
  .nav-link.scrolled {
@@ -286,4 +290,13 @@ hr {
 body {
   position: relative;
   top: 0;
+}
+
+.editCard {
+  padding: 4rem;
+}
+
+.border {
+  margin-bottom: 2em ;
+  border: 1px solid;
 }

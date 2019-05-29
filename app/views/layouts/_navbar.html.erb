@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark navbar-inner fixed-top">
-  <a class="navbar-brand" href="/"><img id="logo" src="http://www.icone-png.com/png/12/12497.png">chaton</a>
+  <a class="navbar-brand" href="/"><img id="logo" src="http://www.icone-png.com/png/12/12497.png">
+  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -9,21 +10,22 @@
       <% if user_signed_in? %>
       <li class="nav-item">
         <%= link_to "Cart", user_carts_path(current_user.id), class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Profile", user_path(current_user.id), class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Log out", destroy_user_session_path, :class => "nav-link", :method => :delete %>
-      </li>
-      <% else %>
-      <li class="nav-item">
-        <%= link_to 'Sign up', new_user_registration_path, class: "nav-link", 'data-toggle' => "modal", 'data-target' => "#modalSignup" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'Log in', new_user_session_path, class: "nav-link", 'data-toggle' => "modal", 'data-target' => "#modalLogin" %>
-      </li>
-      <% end %>
-    </ul>
-  </div>
+      </li>      
+     <li class="nav-item">
+      <%= link_to "Profile", user_path(current_user.id), class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Log out", destroy_user_session_path, :class => "nav-link", :method => :delete %>
+    </li>
+    <% else %>
+    <li class="nav-item">
+      <%= link_to 'Sign up', new_user_registration_path, class: "nav-link", 'data-toggle' => "modal", 'data-target' => "#modalSignup" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to 'Log in', new_user_session_path, class: "nav-link", 'data-toggle' => "modal", 'data-target' => "#modalLogin" %>
+    </li>
+    <% end %>
+  </ul>
+</div>
 </nav>
+

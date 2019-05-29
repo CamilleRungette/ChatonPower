@@ -6,16 +6,16 @@
   </div>
 
   <% if @user.avatar.attached? %>
-  <%= image_tag @user.avatar, alt: 'avatar' %>
-  <%= form_tag user_avatars_path(@user), multipart: true do %>
-  <%= file_field_tag :avatar %>
+  <%= image_tag @user.avatar, alt: 'avatar', :class => 'profile-img' %>
+  <%= form_tag user_avatars_path(@user.id), multipart: true do %>
+  <%= file_field_tag :avatar, :class =>"form-control-file" %>
   <%= submit_tag "mettre à jour" %>
   <% end %>
   <% else %>
   <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
   <%= form_tag user_avatars_path(@user.id), multipart: true do %>
-  <%= file_field_tag :avatar %><br>
-  <%= submit_tag 'change your avatar', :class => "btn btn-outline-secondary", :style => "width: 10rem;" %>
+  <%= file_field_tag :avatar, :class =>"form-control-file"  %><br>
+  <%= submit_tag 'change your avatar', :class => "btn btn-outline-secondary" %>
   <% end %>
   <% end %>
 
@@ -28,11 +28,13 @@
     <li class="list-group-item">Contact: <%= @user.email %></li>
   </ul>
   <div class="card-body">
-    <a href="/" class="card-link">Home Page</a>
-    <a href="#" class="card-link">My orders</a>
+    <%= link_to 'Home', root_path, class: "card-link" %>
+    <%= link_to 'Edit', edit_user_registration_path, class: "card-link" %>
   </div>
   <div class="card-footer text-muted">
-    2 days ago
   </div>
 </div>
+
+
+
 
