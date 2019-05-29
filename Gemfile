@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+# Active storage Amazon 
+gem "aws-sdk-s3", require: false
+
 gem 'activerecord-reset-pk-sequence'
 gem 'jquery-rails' 
 gem 'dotenv'
