@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  after_create :welcome_send
   has_one :cart, dependent: :destroy
   has_many :orders, dependent: :destroy
   # Include default devise modules. Others available are:
@@ -8,10 +9,13 @@ class User < ApplicationRecord
 
 	after_create :create_cart
 
-  private 
+  private
   def create_cart
   	Cart.create!(user_id: self.id)
   end
 
+  def welcome_send
+    UserMailer.welcome_email(self).deliver_now
+  end
 
 end

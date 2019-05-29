@@ -3,9 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem 'dotenv-rails'
+gem 'mailjet'
 gem 'activerecord-reset-pk-sequence'
-gem 'jquery-rails' 
-gem 'dotenv'
+gem 'jquery-rails'
 gem 'faker'
 gem 'table_print'
 gem 'better_errors'
