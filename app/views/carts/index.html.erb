@@ -4,7 +4,10 @@
 
 <% else %>
 
-<ul class="list-group">
+<h1 class="index-title"> You cart:</h1>
+
+
+<ul class="list-group-cart">
 	<% @items.each do |item| %>
 	<li class="list-group-item d-flex justify-content-between align-items-center list-checkout-cart">
 
@@ -40,11 +43,11 @@
 					</div>
 				</div>
 			</div>
-		</div>  
+		</div>
 	</li>
 	<% end %>
 	</ul>
-	
+
 		<div class="total">
 		<% count = 0.0 %>
 		<% @items.each do |item|%>
@@ -52,5 +55,8 @@
 		<% end %>
 			<hr class="total-bar" >
 			<h5 class="total-cart">Sous-total (<%= @items.count %> articles) : <span class="price-color"><%= count%>€</span></h5>
+			<button type="button" class="total-cart" name="button">
+				<%= link_to "Confirmer la commande", controller: :orders, action: :show, user_id: @user.id, cart_id: @user.cart.id, id: @user.id %>
+			</button>
 		</div>
 <% end %>

@@ -1,0 +1,8 @@
+<h5>L'équipe de Chaton-Power vous remercie pour votre achat !</h5>
+<p>En voici le récapitulatif :</p>
+<ul>
+  <% @order.items.each do |item| %>
+  <li><%= item.title %> : <%= item.price %></li>
+  <% end %>
+  <li> Pour un total de <%= @total %> € </li>
+</ul>

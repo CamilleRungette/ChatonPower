@@ -22,6 +22,9 @@ class UsersController < ApplicationController
   end
 
   def your_profile?
-    redirect_to root_path if current_user.is_admin != true && current_user != User.find(params[:id])
+    if current_user != User.find(params[:id])
+      redirect_to root_path
+    end
+    # redirect_to root_path if current_user.is_admin != true && 
   end
 end

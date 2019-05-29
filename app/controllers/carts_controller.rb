@@ -1,5 +1,7 @@
 class CartsController < ApplicationController
   def index
+    @user = User.find(current_user.id)
+    
     if user_signed_in?
       @cart = User.find(current_user.id).cart
     else

@@ -100,13 +100,22 @@
 }
 
 .flex-container {
-  max-width: 70%;
-  margin: auto;	
   display: flex;
   flex-wrap: wrap;
   padding: auto;
   justify-content: space-around;
-  padding-top: 10%;
+  padding-top: 4%;
+  background-color: #fafafa;
+  width: 70%;
+  margin: auto;
+  margin-bottom: 4%;
+}
+
+.index-title {
+  font-size: 4.3em;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
 }
 
 .card-content {
@@ -114,6 +123,14 @@
   max-width: 21.875em; 
   box-shadow: 5px 5px 5px #c5c8cc; 
 
+}
+
+.video {
+  width: 100%;
+}
+
+.caddie {
+  margin-left: 20px;
 }
 
 .banner{
@@ -150,14 +167,16 @@
 }
 
 .show-card {
-  max-width: 70%;
-  min-width: 40%;
+  max-width: 50%;
+  min-width: 40em;
   margin: auto;
   margin-top: 6%;
+  margin-bottom: 6%;
 }
 
 .show-img {
   width: 100%;
+  margin: auto;
 }
 
 /* Index du panier */
@@ -165,7 +184,7 @@
     border-radius: 6px;
     margin-bottom: 1%;
 }
-.list-group{
+.list-group-cart{
     width: 85%;
     margin: auto;
 
@@ -247,8 +266,24 @@ hr {
     color: #78C2AD;
 }
 
+.profile-img {
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
+  border: 1px solid grey;
+  border-radius: 100px;
+}
+
 .footer{
   background-color: #F3969A;
   text-align: center;
   color: black;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+body {
+  position: relative;
+  top: 0;
 }
