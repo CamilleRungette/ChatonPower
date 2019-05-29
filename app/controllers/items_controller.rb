@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-  	@item = Item.find(params[:id])
+  	@item = Item.friendly.find_by(title: params[:id])
   end
 
   def update
