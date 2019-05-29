@@ -1,0 +1,12 @@
+
+		Hey <%= @user.first_name %> ! Thanks for your order n° <%= @order.id %>
+
+		Here is the content of your order :
+
+		<% if @items.count === 1 %>
+		<%= @items.title %>
+		<% else %>
+			<% @items.each do |item| %>
+			<%= item.title %> - <%= item.price %> 
+			<% end %>
+		<% end %>
