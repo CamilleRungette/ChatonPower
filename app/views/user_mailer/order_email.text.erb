@@ -1,0 +1,11 @@
+	Hey <%= @current_user.first_name %> ! Thanks for your order n° <%= @order.id %>
+
+		Here is the content of your order : (<%= @items.count %> )
+
+			<% @items.each do |item| %>
+			<%= item.title %> - <%= item.price %> 
+			<% end %>
+
+	Thank you for trusting us !
+
+RRCSS Team

@@ -3,16 +3,7 @@ class UsersController < ApplicationController
   before_action :authenticate?, only: [:show]
 
   def show
-  @user = User.find(params[:id])
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
+  @user = User.friendly.find(params[:id])
   end
 
   private
@@ -22,6 +13,9 @@ class UsersController < ApplicationController
   end
 
   def your_profile?
-    redirect_to root_path if current_user.is_admin != true && current_user != User.find(params[:id])
+    if current_user != User.friendly.find(params[:id])
+      redirect_to root_path
+    end
+    # redirect_to root_path if current_user.is_admin != true &&
   end
 end

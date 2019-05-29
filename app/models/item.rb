@@ -1,4 +1,12 @@
 class Item < ApplicationRecord
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
+  has_many :join_table_cart_item, dependent: :destroy
+  has_many :carts, through: :join_table_cart_item
+
+  has_many :join_table_order_items, dependent: :destroy
+  has_many :carts, through: :join_table_order_items
   # TODO: allow minimum char for title to be eq. to 3
   validates :title,
   presence: true,

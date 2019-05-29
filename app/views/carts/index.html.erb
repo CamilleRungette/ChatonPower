@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<% if @cart == nil || @items.length == 0 %>
+
+	<div class="list-group-item" id="empty-cart">
+		<h2>Vous n'avez aucun article dans votre panier !</h2>
+		<p><%= link_to "Back home", root_path %></p>
+	</div>
+
+	<% else %>
+
+	<h1 class="index-title"> Your cart:</h1>
+
+
+	<ul class="list-group-cart">
+		<% @items.each do |item| %>
+		<li class="list-group-item d-flex justify-content-between align-items-center list-checkout-cart">
+
+			<div class="item-details-container">
+				<img class="product-image" src="https://images.unsplash.com/photo-1472491235688-bdc81a63246e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+				<div class="item-title-description">
+					<h3><%= link_to item.title, item_path(item.id)%></h3>
+					<small class="text-muted description-text-item">DESCRIPTION plus longue pour se rendre co;ptre dskjcwdfjknwekjfnwejkbwjkbvkjbwkbfkqhfk</small>
+				</div>
+			</div>
+
+			<div class="price-container">
+				<%= item.price %>€
+			</div>
+
+			<div class="quantity-button">
+				<div class="form-group">
+					<label for="exampleSelect1">Quantité</label>
+					<div class="inputndelete">
+						<div>
+							<select class="form-control" id="exampleSelect1">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+
+						<div class="trash-div">
+							<%= link_to "", item_path(item.id) ,class:"fas fa-trash-alt", method: :delete %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</li>
+		<% end %>
+	</ul>
+
+	<div class="total">
+		<% count = 0.0 %>
+		<% @items.each do |item|%>
+		<% count += item.price %>
+		<% end %>
+
+
+		<hr class="total-bar" >
+		<h5 class="total-cart">Sous-total (<%= @items.count %> articles) : <span class="price-color"><%= count%>€</span></h5>
+
+
+		<%= link_to "Checkout", new_user_cart_order_path(current_user.id, current_user.cart.id), class: "btn btn-outline-primary total-cart", id: "checkout-button" %>	
+
+
+
+
+
+	</div>
+
+
+	<% end %>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,2 @@
+class JoinTableCartItemsController < ApplicationController
+end

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+
+		<h1>New order n° <%= @order.id%> </h1>
+
+		<p> The customer <%= @user.id %> just ordered <%= @items.count %> items :
+			<% @items.each do |item| %>
+			- <%= item.title %>: <%= item.price %> € <br/>
+			<% end %>
+		</p>
+
+		<p>Total price: <%= @count %></p>
+
+	</body>
+	</html>

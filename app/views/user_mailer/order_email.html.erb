@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+
+		<h1>Hey <%= @current_user.first_name %> ! Thanks for your order n° <%= @order.id %></h1>
+
+		<h4>Here is the content of your order : (<%= @items.count %> ) </h4>
+		<p>
+			<% @items.each do |item| %>
+			<%= item.title %> - <%= item.price %> <br/>
+			<% end %>
+		</p>
+
+<p>Thank you for trusting us !<br/>
+RRCSS&copy Team</p>
+
+	</body>
+	</html>
