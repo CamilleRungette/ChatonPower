@@ -15,10 +15,10 @@ class FavoritesController < ApplicationController
 
   def destroy
     @favorite = Favorite.find_by(user_id: current_user.id, item_id: params[:item_id])
-    @favorite.delete()
-    respond_to do |format| 
-     format.html {redirect_to root_path}
-     format.js {}
-   end
- end
+    @favorite.destroy
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js { }
+      end
+  end
 end
