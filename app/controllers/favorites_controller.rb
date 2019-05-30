@@ -6,13 +6,19 @@ class FavoritesController < ApplicationController
   def create
     @favorite = Favorite.create(user_id: current_user.id, item_id: params[:item_id])
     if @favorite.save
-      redirect_to root_path
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js { }
+      end
     end
   end
 
   def destroy
     @favorite = Favorite.find_by(user_id: current_user.id, item_id: params[:item_id])
-    @favorite.destroy
-    redirect_to root_path
-  end
+    @favorite.delete()
+    respond_to do |format| 
+     format.html {redirect_to root_path}
+     format.js {}
+   end
+ end
 end
