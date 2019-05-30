@@ -1,11 +1,11 @@
 class ItemsController < ApplicationController
   def index
-  	@item = Item.all
+  	@items = Item.all
   end
 
   def show
   	@item = Item.friendly.find_by(title: params[:id])
-    
+
   end
 
   def update

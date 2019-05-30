@@ -26,7 +26,7 @@ Order.reset_pk_sequence
     title: Faker::Creature::Cat.name + " " + Faker::Creature::Cat.name,
     description: "lorem ipsum",
     price: rand(0..100).to_f,
-    image_url: "https://images.unsplash.com/photo-1472491235688-bdc81a63246e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+    image_url: "#{rand(1..10)}.jpeg"
   )
 end
 

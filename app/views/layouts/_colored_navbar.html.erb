@@ -10,8 +10,8 @@
       <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to "Cart (#{cart_count})", user_carts_path(current_user.id), class: "nav-link colored-nav" %>
-        </li>      
+          <%= link_to "Cart (#{cart_count})", user_your_cart_better_be_full_index_path(current_user.id), class: "nav-link colored-nav" %>
+        </li>
         <li class="nav-item">
           <%= link_to "Profile", user_path(current_user.id), class: "nav-link colored-nav" %>
         </li>
@@ -31,5 +31,3 @@
   </nav>
 </div>
 <br>
-
-
