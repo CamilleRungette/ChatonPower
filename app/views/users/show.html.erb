@@ -1,8 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title></title>
-</head>
 <body class="show-page">
 
 <%= render 'layouts/colored_navbar' %>
@@ -22,7 +17,7 @@
       <%= file_field_tag :avatar, :class =>"form-control-file choose", onchange: 'this.form.submit();' %>
       <% end %>
       <% else %>
-      <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p> <br/>
+      <p>=== You don't have an avatar yet ===</p> <br/>
       <%= form_tag user_avatars_path(@user.id), multipart: true do %>
       <%= file_field_tag :avatar, :class =>"form-control-file", onchange: 'this.form.submit();' %><br>
       <% end %>
