@@ -45,6 +45,7 @@ form.search-form {
 }
 input.search {
   display: inline-block;
+  vertical-align: middle;
 }
 .search-bar {
   display: flex;
