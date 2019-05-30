@@ -216,11 +216,12 @@ body {
 }
 
 .show-card {
-  max-width: 50%;
+  max-width: 40%;
   min-width: 40em;
   margin: auto;
   margin-top: 6%;
   margin-bottom: 6%;
+  text-align: center;
 }
 
 .show-img {
@@ -323,6 +324,7 @@ hr {
   height: 150px;
   border: 1px solid grey;
   border-radius: 100px;
+  text-align: center;
 }
 
 #page-container {  
@@ -345,7 +347,11 @@ hr {
 }
 
 .avatar-section {
-  display: flex;
+ text-align: center;
+}
+
+.choose {
+  margin-left: 40%;
 }
 
 .avatar-profile {

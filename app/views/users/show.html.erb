@@ -10,11 +10,11 @@
     <div class="avatar-profile">
       <% if @user.avatar.attached? %>
       <%= image_tag @user.avatar, alt: 'avatar', :class => 'profile-img' %>
-      <%= form_tag user_avatars_path(@user.id), multipart: true do %>
-      <%= file_field_tag :avatar, :class =>"form-control-file", onchange: 'this.form.submit();' %>
+      <%= form_tag user_avatars_path(@user.id), multipart: true do %> <br/>
+      <%= file_field_tag :avatar, :class =>"form-control-file choose", onchange: 'this.form.submit();' %>
       <% end %>
       <% else %>
-      <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
+      <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p> <br/>
       <%= form_tag user_avatars_path(@user.id), multipart: true do %>
       <%= file_field_tag :avatar, :class =>"form-control-file", onchange: 'this.form.submit();' %><br>
       <% end %>
