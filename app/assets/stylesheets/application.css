@@ -572,3 +572,7 @@ hr {
 .nav-button:hover {
   font-weight: normal;
 }
+
+.welcome {
+  background-image: url("welcome.jpg");
+}
