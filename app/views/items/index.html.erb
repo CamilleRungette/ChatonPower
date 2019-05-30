@@ -1,7 +1,8 @@
 <%= render 'layouts/transparent_navbar' %>
+
 <div class="video-container">
 	<div class="banner">
-		<%= video_tag "cat.mp4", controls: false, autoplay: true, muted: true, loop: true, id: "home-video", class:"video" %>
+	<%= video_tag "cat.mp4", controls: false, autoplay: true, muted: true, loop: true, id: "home-video", class:"video" %>
 	</div>
 </div>
 
@@ -9,14 +10,15 @@
 	<div class="typing">
 		<h1 class="title-banner">CHATON POWER.</h1>
 	</div>
-
 	<br/>
+
 	<p class="text-banner">You love cats? Us too. Welcome to paradise. <br/><a class="btn btn-secondary" href="#section2" id="scroll-button">See our pictures </a>
 	</p>
 </div>
 
 <div class="space">
 </div> <br/><br/><br/><br/>
+
 <div id="section2">
 </div>
 
@@ -29,11 +31,12 @@
 	<% end %>
 	<div class="search-bar">
 		<%= form_tag(search_items_path, method: 'search') do %>
-		<%= text_field_tag(:search, params[:search], class: "pl-3 form-control search") %>
-		<%= submit_tag("Search", name: nil, class: "btn btn-primary") %>
+			<%= text_field_tag(:search, params[:search], class: "pl-3 form-control search") %>
+			<%= submit_tag("Search", name: nil, class: "btn btn-primary") %>
 		<% end %>
 	</div>
 	<br/>
+
 	<div class="flex-container">
 		<% @items.each do |item| %>
 		<% @title = item.title %>
@@ -44,6 +47,7 @@
 			<%= render "card" %>
 		</div> <br/> <br/>
 		<% end %>
+
 	</div>
-	<%= render "layouts/footer"%>
+<%= render "layouts/footer"%>
 </div>

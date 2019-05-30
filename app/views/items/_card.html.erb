@@ -1,5 +1,5 @@
 <div class="card card-content mb-3">
-	<h3 class="card-header" style="text-align: center;"> 
+	<h3 class="card-header" style="text-align: center;">
 		<%= @title %>
 		<% if user_signed_in? && already_favorite?(@id) != true %>
 		<%= link_to "", item_favorites_path(@id), remote: true, method: 'post', class:"card-link far fa-star", id:"favorite#{@id}" %>
@@ -11,10 +11,11 @@
 	<div class="card-body" >
 		<p class="card-text" style="float:left;"> <%= @price%> € </p>
 		<%= link_to "See more", item_path(@title), style: "float:right"%>
-		<% if user_signed_in? %>
-		<%= link_to "", item_path(@title), method: 'put', class:"card-link, fas fa-shopping-cart caddie" %>
-		<% else %>
-		<%= link_to '', new_user_session_path, class: "card-link, fas fa-shopping-cart caddie", 'data-toggle' => "modal", 'data-target' => "#modalLogin" %>
-		<% end %>
+			<% if user_signed_in? %>
+				<%= link_to "", item_path(@title), method: 'put', class:"card-link, fas fa-shopping-cart caddie" %>
+			<% else %>
+				<%= link_to '', new_user_session_path, class: "card-link, fas fa-shopping-cart caddie", 'data-toggle' => "modal", 'data-target' => "#modalLogin" %>
+			<% end %>
 	</div>
-</div> <br/> <br/>
+</div>
+<br/> <br/>

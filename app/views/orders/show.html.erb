@@ -1,16 +1,16 @@
 <meta HTTP-EQUIV="REFRESH" content="6; url=<%=root_path%>">
-<div class="jumbotron">
-  <h1 class="display-3">Meeeeooow!</h1>
-  <p class="lead">The Chaton-Power team thanks you for your order ! !</p>
-  <hr class="my-4">
-  <% @order.items.each do |item| %>
-		<p><%= item.title %> : <%= item.price %></p>
-		<% end %></p>
-		<p><em> Total: <%= @total %> € </em></p>
-  <p class="lead">
-  	<p>You will be automatically redirected in a few seconds...</p>
-  	<p>If not, click below</p>
-    <a class="btn btn-primary btn-sm" href="<%=root_path%>" role="button">Cat Gallery</a>
-  </p>
-</div>
+  <div class="jumbotron">
+    <h1 class="display-3">Meeeeooow!</h1>
+      <p class="lead">The Chaton-Power team thanks you for your order ! !</p>
+      <hr class="my-4">
+        <% @order.items.each do |item| %>
+          <p><%= item.title %> : <%= item.price %></p>
+        <% end %></p>
+      <p><em> Total: <%= @total %> € </em></p>
+    <p class="lead">
+      <p>You will be automatically redirected in a few seconds...</p>
+        <p>If not, click below</p>
+      <a class="btn btn-primary btn-sm" href="<%=root_path%>" role="button">Cat Gallery</a>
+    </p>
+  </div>
 <%= yield %>
