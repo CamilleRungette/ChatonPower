@@ -10,4 +10,11 @@ class CartsController < ApplicationController
 
     @items = User.find(current_user.id).cart.items if @cart != nil # Si le panier est vide
   end
+
+  def destroy
+    @item = User.find(current_user.id).cart.items.find(params[:id])
+    @cart = JoinTableCartItem.where(cart_id: current_user.cart).find_by(item_id: @item.id)
+    @cart.destroy
+    redirect_to user_carts_path(current_user.id)
+  end
 end

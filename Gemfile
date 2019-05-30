@@ -6,7 +6,7 @@ ruby '2.5.1'
 gem 'friendly_id', '~> 5.2.4'
 gem 'dotenv-rails'
 gem 'mailjet'
-# Active storage Amazon 
+# Active storage Amazon
 gem "aws-sdk-s3", require: false
 gem 'activerecord-reset-pk-sequence'
 gem 'jquery-rails'

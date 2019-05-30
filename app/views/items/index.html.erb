@@ -1,3 +1,4 @@
+<%= render 'layouts/transparent_navbar' %>
 <div class="video-container">
 	<div class="banner">
 		<%= video_tag "cat.mp4", controls: false, autoplay: true, muted: true, loop: true, id: "home-video", class:"video" %>
@@ -8,7 +9,6 @@
 	<div class="typing">
 		<h1 class="title-banner">CHATON POWER.</h1>
 	</div>
-	<%= javascript_include_tag 'application' %>
 
 	<br/>
 	<p class="text-banner">You love cats? Us too. Welcome to paradise. <br/><a class="btn btn-secondary" href="#section2" id="scroll-button">See our pictures </a>
@@ -17,25 +17,24 @@
 
 <div class="space">
 </div>
-<br/> <br/>
-<br/> <br/>
-<br/> <br/>
-<br/> <br/>
-<br/> <br/>
-
-<h1 class="index-title"> Pick you favorite:</h1>
-<br/>
-<div class="flex-container" id="section2">
-	<% @item.each do |item| %>
-	<% @title = item.title %>
-	<% @price = item.price %>
-	<% @image = item.image_url %>
-	<% @id = item.id %>
-	<div>
-		<%= render "card" %>
-	</div> <br/> <br/>
-	<% end %>
+<div id="section2">
 </div>
 
+<div class="cat-cards">
+	<br/><br/>
+	<h1 class="index-title"> Pick you favorite</h1>
+	<br/>
+	<div class="flex-container">
+		<% @item.each do |item| %>
+		<% @title = item.title %>
+		<% @price = item.price %>
+		<% @image = item.image_url %>
+		<% @id = item.id %>
+		<div>
+			<%= render "card" %>
+		</div> <br/> <br/>
+		<% end %>
+	</div>
 <%= render "layouts/footer"%>
+</div>
 
