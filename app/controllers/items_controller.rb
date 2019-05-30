@@ -29,10 +29,8 @@ class ItemsController < ApplicationController
     @item = User.find(current_user.id).cart.items.find(params[:id])
     @cart = JoinTableCartItem.where(cart_id: current_user.cart).find_by(item_id: @item.id)
     @cart.delete
-    redirect_to user_carts_path(current_user.id)
+    redirect_to user_your_cart_better_be_full_index_path(current_user.id)
   end
-
-private
 
   def authenticate_user
     unless user_signed_in?
