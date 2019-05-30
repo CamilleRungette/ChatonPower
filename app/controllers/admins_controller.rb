@@ -12,7 +12,7 @@ class AdminsController < ApplicationController
 
 	def create
 		current_user.update_attribute :admin, true
-		redirect_to admin(current_user.id)
+		redirect_to admin_path(current_user.id)
 	end
 
 	def show
