@@ -17,7 +17,7 @@
     <li class="nav-item">
       <%= link_to "Log out", destroy_user_session_path, :class => "nav-link", :method => :delete %>
     </li>
-    <% elsif current_user.admin?%>
+    <% elsif user_signed_in? && current_user.admin?%>
     <li class="nav-item">
         <%= link_to "Admin Dashboard", admins_index_path, class: "nav-link", :style => 'color:grey;' %>
       </li>
