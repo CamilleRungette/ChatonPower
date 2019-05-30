@@ -23,4 +23,3 @@ $(function () {
 		$link.toggleClass('scrolled', $(this).scrollTop() > $(".banner").height());
 	});
 });
-

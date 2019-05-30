@@ -7,7 +7,7 @@
       <h5 class="card-title"> &copy <%= Faker::Name.name  %></h5>
       <h6 class="card-subtitle text-muted">Photographer</h6>
     </div>
-    <%= image_tag "#{@item.image_url}", alt: "Card image", class: "show-img" %>
+    <%= image_tag "#{rand(1..10)}.jpeg", alt: "Card image", class: "show-img" %>
     <div class="card-body">
       <p class="card-text"><%= @item.description %></p>
     </div>
@@ -17,7 +17,6 @@
     </ul>
     <div class="card-body">
       <a href="/" class="card-link">Home Page</a>
-      
       <%= link_to "Add to cart", item_path(@item.title), method: 'put', class:"card-link" %>
     </div>
     <div class="card-footer text-muted">
@@ -26,6 +25,6 @@
   </div>
 </div>
 <div class="space">
-
+  
 </div>
 <%= render 'layouts/footer' %>

@@ -6,13 +6,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :users do
-    resources :carts do
+    resources :your_cart_better_be_full, controller: :carts do
       resources :orders
     end
-  end
-
-  resources :users do
-    resources :carts
   end
 
   resources :users, only: [:show] do
@@ -20,6 +16,10 @@ Rails.application.routes.draw do
   end
 
   resources :items
-  resources :charges
+
+
+  resources :items do
+    post 'search',  :on => :collection
+  end
 
 end
