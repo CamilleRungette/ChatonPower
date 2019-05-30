@@ -22,7 +22,11 @@
 
 <div class="cat-cards">
 	<br/><br/>
+	<% if @breed == nil %>
 	<h1 class="index-title"> Pick you favorite</h1>
+	<% else %>
+	<h1 class="index-title">Our <%= @breed %> cats!</h1>
+	<% end %>
 	<div class="search-bar">
 		<%= form_tag(search_items_path, method: 'search') do %>
 		<%= text_field_tag(:search, params[:search], class: "pl-3 form-control search") %>

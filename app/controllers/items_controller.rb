@@ -3,6 +3,8 @@ class ItemsController < ApplicationController
 
   def index
   	@items = Item.all
+    @items = Item.where(breed: params[:breed]) if params[:breed] != nil
+    @breed = params[:breed] if params[:breed] != nil
   end
 
   def show
@@ -20,7 +22,7 @@ class ItemsController < ApplicationController
       @cart = current_user.cart.id
       JoinTableCartItem.create!(cart_id: @cart, item_id: @item.id)
       redirect_to root_path
-    else 
+    else
       redirect_to root_path
     end
   end
@@ -40,4 +42,3 @@ class ItemsController < ApplicationController
   end
 
 end
-

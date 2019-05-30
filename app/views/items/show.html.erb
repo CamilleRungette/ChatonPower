@@ -9,7 +9,11 @@
     </div>
     <%= image_tag "#{@item.image_url}", alt: "Card image", class: "show-img" %>
     <div class="card-body">
-      <p class="card-text"><%= @item.description %></p>
+      <p class="card-text">
+          <%= link_to @item.breed, items_path(breed: @item.breed) %>
+
+        <%= @item.description %>
+      </p>
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item"> <%= @item.price %> €</li>
