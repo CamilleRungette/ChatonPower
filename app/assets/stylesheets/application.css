@@ -37,10 +37,9 @@ body {
   height: 200px; 
 }
 
-.search-bar {
-
-  justify-content: center;
-  text-align: center;
+.search-bar-nav {
+  display: flex;
+  flex-direction: row;
 }
 
 .search {
@@ -168,6 +167,9 @@ body {
   text-align: center;
 }
 
+.index-search{
+  margin-left: 40%;
+}
 .card-content {
   height: 19.375em; 
   max-width: 21.875em; 
@@ -558,4 +560,15 @@ hr {
 
 .stripe-body {
   background-image: url("pusheen_the_cats.png");
+}
+
+.nav-button {
+  color: grey;
+  background-color: white ;
+  font-weight: bold;
+  border: grey;
+}
+
+.nav-button:hover {
+  font-weight: normal;
 }
