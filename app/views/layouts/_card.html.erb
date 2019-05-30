@@ -1,11 +1,13 @@
 <div class="card card-content mb-3">
   <h3 class="card-header" style="text-align: center;"> <%= @title %> </h3>
   <%= image_tag '1.jpeg' %>
-  <div class="card-body" >
 
-    <p class="card-text" style="float:left;"> <%= @price%> € </p> 
-    <%= link_to "Plus d'infos", item_path(@id), style: "float:right"%>
+	<div class="card-body" >
 
-     <%= link_to "", item_path(@id), method: 'put', class:"card-link, fas fa-shopping-cart caddie" %>
-     </div>
-</div> <br/> <br/>
+   	 <p class="card-text" style="float:left;"> <%= @price%> € </p> 
+    	<%= link_to "Plus d'infos", item_path(@id), style: "float:right"%>
+
+     	<%= link_to "", item_path(@id), method: 'put', class:"card-link, fas fa-shopping-cart caddie" %>
+ 	</div>
+</div> 
+<br/> <br/>

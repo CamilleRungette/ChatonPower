@@ -19,10 +19,9 @@
 		<div class="item-details-container">
 			<%= image_tag "#{item.image_url}", alt: "Card image", class: "product-image" %>
 			<div class="item-title-description">
-				<h3><%= link_to item.title, item_path(item.id)%></h3>
+				<h3><%= link_to item.title, item_path(item.title)%></h3>
 				<small class="text-muted description-text-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at quam placerat, aliquet ex et, rhoncus erat. Pellentesque faucibus semper magna, id blandit enim eleifend egestas. Duis iaculis ut est in pulvinar.</small>
 			</div>
-		</div>
 
 		<div class="price-container">
 			<%= item.price %>€
@@ -30,7 +29,7 @@
 
 		<div class="quantity-button">
 			<div class="form-group">
-				<label for="exampleSelect1">Quantité</label>
+				<label for="exampleSelect1">Quantity: </label>
 				<div class="inputndelete">
 					<div>
 						<select class="form-control" id="exampleSelect1">
@@ -48,35 +47,23 @@
 				</div>
 			</div>
 		</div>
-	</li>
-	<% end %>
-</ul>
+		</li>
+		<% end %>
+	</ul>
 
-<div class="total">
-	<% count = 0.0 %>
-	<% @items.each do |item|%>
-	<% count += item.price %>
-	<% end %>
+	<div class="total">
+		<% count = 0.0 %>
+		<% @items.each do |item|%>
+		<% count += item.price %>
+		<% end %>
 
-
-	<hr class="total-bar" >
-	<h5 class="total-cart">Sous-total (<%= @items.count %> articles) : <span class="price-color"><%= count%>€</span></h5>
-
-
-	<%= link_to "Checkout", new_user_your_cart_better_be_full_order_path(current_user.id, current_user.cart.id), class: "btn btn-outline-primary total-cart", id: "checkout-button" %>
-
-</div>
-
-
+		<hr class="total-bar" >
+		<h5 class="total-cart">Sous-total (<%= @items.count %> articles) : <span class="price-color"><%= count%>€</span></h5>
+		<%= link_to "Checkout", new_user_your_cart_better_be_full_order_path(current_user.id, current_user.cart.id), class: "btn btn-outline-primary total-cart", id: "checkout-button" %>
+	</div>
 <% end %>
 
 <div class="space">
-
 </div>
-<br /><br />
-<br /><br />
-<br /><br />
-<br /><br />
-<br /><br /><br/>
 
 <%= render "layouts/footer"%>

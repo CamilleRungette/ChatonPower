@@ -37,10 +37,9 @@ body {
   height: 200px; 
 }
 
-.search-bar {
-
-  justify-content: center;
-  text-align: center;
+.search-bar-nav {
+  display: flex;
+  flex-direction: row;
 }
 
 .search {
@@ -168,6 +167,9 @@ body {
   text-align: center;
 }
 
+.index-search{
+  margin-left: 40%;
+}
 .card-content {
   height: 19.375em; 
   max-width: 21.875em; 
@@ -217,11 +219,15 @@ body {
 }
 
 .show-card {
-  max-width: 50%;
+  max-width: 40%;
   min-width: 40em;
   margin: auto;
   margin-top: 6%;
-  margin-bottom: 6%;
+  text-align: center;
+}
+
+.show-page {
+  height: 16em;
 }
 
 .show-img {
@@ -324,6 +330,7 @@ hr {
   height: 150px;
   border: 1px solid grey;
   border-radius: 100px;
+  text-align: center;
 }
 
 #page-container {  
@@ -346,7 +353,11 @@ hr {
 }
 
 .avatar-section {
-  display: flex;
+ text-align: center;
+}
+
+.choose {
+  margin-left: 40%;
 }
 
 .avatar-profile {
@@ -365,15 +376,15 @@ hr {
 
 .footer-distributed{
   position: absolute;
+  bottom: 0;
   background-color: #292c2f;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
   width: 100%;
-  text-align: left;
   font: bold 16px sans-serif;
-  bottom: 0;
   padding: 55px 50px;
   margin-top: 80px;
+  margin-bottom: -80px;
 }
 
 .footer-distributed .footer-left,
@@ -381,6 +392,7 @@ hr {
 .footer-distributed .footer-right{
   display: inline-block;
   vertical-align: top;
+
 }
 
 /* Footer left */
@@ -548,4 +560,19 @@ hr {
 
 .stripe-body {
   background-image: url("pusheen_the_cats.png");
+}
+
+.nav-button {
+  color: grey;
+  background-color: white ;
+  font-weight: bold;
+  border: grey;
+}
+
+.nav-button:hover {
+  font-weight: normal;
+}
+
+.welcome {
+  background-image: url("welcome.jpg");
 }

@@ -2,29 +2,36 @@
   <nav class="navbar navbar-expand-lg navbar-dark navbar-inner colored-navbar">
     <a class="navbar-brand" href="/"><img id="logo" src="http://www.icone-png.com/png/12/12497.png">
     </a> 
-    <div class="search-bar-nav">
+
+    <div class="form-inline">
       <%= form_tag(search_items_path, method: 'search') do %>
       <%= text_field_tag(:search, params[:search], class: "form-control") %>
-      <%= submit_tag("Search", name: nil, class: "btn btn-secondary") %>
-      <% end %>
+      <%= submit_tag("Search", name: nil, class: "btn btn-secondary nav-button") %> 
+      <% end %> 
     </div>
+    
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav ml-auto">
-        <% if user_signed_in? && !current_user.admin? %>
-      <li class="nav-item">
-        <%= link_to "Cart", user_your_cart_better_be_full_index_path, class: "nav-link" %>
-      </li>
-     <li class="nav-item">
-      <%= link_to "Profile", user_your_cart_better_be_full_index_path(current_user), class: "nav-link" %>
-    </li>
-    <li class="nav-item">
-      <%= link_to "Log out", destroy_user_session_path, :class => "nav-link", :method => :delete %>
-    </li>
-    <% elsif current_user.admin?%>
+
+
+        <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to "Cart (#{cart_count})", user_your_cart_better_be_full_index_path(current_user.id), class: "nav-link colored-nav" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Favorites", user_favorites_path(current_user.id), class: "nav-link colored-nav" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Profile", user_path(current_user.id), class: "nav-link colored-nav" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Log out", destroy_user_session_path, :class => "nav-link colored-nav", :method => :delete %>
+        </li>
+        <% elsif current_user.admin?%>
     <li class="nav-item">
         <%= link_to "Admin Dashboard", admins_index_path, class: "nav-link", :style => 'color:grey;' %>
       </li>
@@ -36,6 +43,7 @@
       <%= link_to 'Log in', new_user_session_path, class: "nav-link", 'data-toggle' => "modal", 'data-target' => "#modalLogin" %>
     </li>
     <% end %>
+
       </ul>
     </div>
   </nav>

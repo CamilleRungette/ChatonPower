@@ -13,6 +13,9 @@ class User < ApplicationRecord
 
 	after_create :create_cart, :welcome_send
 
+  has_many :favorites
+  has_many :items, through: :favorites
+
   private
   def create_cart
   	Cart.create!(user_id: self.id)

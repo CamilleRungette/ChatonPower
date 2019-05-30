@@ -1,0 +1,3 @@
+document.querySelector("#favorite<%= params[:item_id] %>").className = "card-link far fa-star";
+document.querySelector("#favorite<%= params[:item_id] %>").setAttribute('data-method', "post");
+document.querySelector("#favorite<%= params[:item_id] %>").setAttribute('data-remote', 'true');

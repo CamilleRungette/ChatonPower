@@ -1,41 +1,34 @@
-
-<!DOCTYPE html>
-<html>
-<head>
-  <title></title>
-</head>
 <body class="stripe-body">
+<%= render "layouts/colored_navbar" %>
 
-<div class="main-stripe">
+  <div class="main-stripe">
+    <div class="container-stripe">
 
+      <%= form_tag user_your_cart_better_be_full_orders_path(current_user.id, current_user.cart.id) do %>
 
-<div class="container-stripe">
+        <article>
+          <% if flash[:error].present? %>
+            <div id="error_explanation">
+              <p><%= flash[:error] %></p>
+            </div>
+          <% end %>
+            <h1 class="display-3"> Checking out: </h1> <br/> <br/>
+            
+          <label class="amount">
+            <span>Amount: <%=@amount%></span>
+          </label>
+        </article>
 
-<%= form_tag user_your_cart_better_be_full_orders_path(current_user.id, current_user.cart.id) do %>
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+        data-description="Your cat picture order"
+        data-amount="<%=@amount * 100%>"
+        data-locale="auto"></script> <br/>
 
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
+        <%= image_tag "pusheen.png", alt: "Pusheen", class: "stripe-logo" %>
+
     <% end %>
-    <h1 class="display-3"> Checking out: </h1> <br/> <br/>
-    <label class="amount">
-      <span>Amount: <%=@amount%></span>
-    </label>
-  </article>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="Your cat picture order"
-          data-amount="<%=@amount * 100%>"
-          data-locale="auto"></script> <br/>
-
- <%= image_tag "pusheen.png", alt: "Pusheen", class: "stripe-logo" %>
-
-<% end %>
-
-</div>
-</div>
+    </div>
+  </div>
 </body>
-</html>
