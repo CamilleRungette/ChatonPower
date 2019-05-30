@@ -24,9 +24,9 @@
 	<br/><br/>
 	<h1 class="index-title"> Pick you favorite</h1>
 	<div class="search-bar">
-		<%= form_tag(search_items_path, method: 'search') do %>
+		<%= form_tag(search_items_path, method: 'search', class: "search-form") do %>
 		<%= text_field_tag(:search, params[:search], class: "pl-3 form-control search") %>
-		<%= submit_tag("Search", name: nil, class: "btn btn-primary") %>
+		<%= submit_tag("Search", name: nil, class: "btn btn-primary search-button") %>
 		<% end %>
 	</div>
 	<br/>

@@ -37,6 +37,15 @@ body {
   height: 200px; 
 }
 
+.search-button{
+  display: inline-block;
+}
+form.search-form {
+  text-align: center;
+}
+input.search {
+  display: inline-block;
+}
 .search-bar {
   display: flex;
   justify-content: center;
