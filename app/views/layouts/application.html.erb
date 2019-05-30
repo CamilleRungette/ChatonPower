@@ -9,18 +9,18 @@
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 	
-	<%= stylesheet_link_tag    'application'%>
+	<%= stylesheet_link_tag 'application'%>
+	<%= javascript_include_tag "application" %>
 
 </head>
 
 <body>
 	<div id="page-container">
-	<%= render 'layouts/navbar' %>
-	<%= render 'devise/registrations/new_registration' %>
-	<%= render 'devise/sessions/new' %>
-	<%= yield %>
-	<br/>
-</div>
+		<%= render 'devise/registrations/new_registration' %>
+		<%= render 'devise/sessions/new' %>
+		<%= yield %>
+		<br/>
+	</div>
 </body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

@@ -1,6 +1,6 @@
 <div class="card card-content mb-3">
 	<h3 class="card-header" style="text-align: center;"> <%= @title %> </h3>
-	<img style="height: 200px; width: 100%;" src="<%= @image %>" alt="Card image">
+	  <%= image_tag "#{rand(1..10)}.jpeg", alt: "Card image", class: "cat-picture" %>
 	<div class="card-body" >
 
 		<p class="card-text" style="float:left;"> <%= @price%> € </p>

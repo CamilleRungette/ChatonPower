@@ -11,6 +11,10 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :users do
+    resources :carts
+  end
+
   resources :users, only: [:show] do
     resources :avatars, only: [:create]
   end

@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
-  before_action :your_profile?, only: [:show]
   before_action :authenticate?, only: [:show]
+  before_action :your_profile?, only: [:show]
 
   def show
-  @user = User.friendly.find(params[:id])
+    @user = User.friendly.find(params[:id])
   end
 
   private
