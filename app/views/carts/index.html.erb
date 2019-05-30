@@ -1,28 +1,28 @@
 <%= render "layouts/colored_navbar" %>
 <% if @cart == nil || @items.length == 0 %>
 
-<div class="list-group-item" id="empty-cart">
-	<img src="https://risibank.fr/cache/stickers/d123/12382-full.png" id="denis-ah">
-	<h2 class="text-center">Your cart is empty!</h2>
-	<p class="text-center"><audio src="https://www.cjoint.com/doc/17_04/GDBo22CpPLB_Denis-Brogniart-AH.mp3" autoplay="true"></audio></p>
-	<p class="text-center"><%= link_to "Back home", root_path %></p>
-</div>
+	<div class="list-group-item" id="empty-cart">
+		<img src="https://risibank.fr/cache/stickers/d123/12382-full.png" id="denis-ah">
+		<h2 class="text-center">Your cart is empty!</h2>
+		<p class="text-center"><audio src="https://www.cjoint.com/doc/17_04/GDBo22CpPLB_Denis-Brogniart-AH.mp3" autoplay="true"></audio></p>
+		<p class="text-center"><%= link_to "Back home", root_path %></p>
+	</div>
 
-<% else %>
+	<% else %>
 
-<h1 class="index-title"> Your cart:</h1>
+	<h1 class="index-title"> Your cart:</h1>
 
-<ul class="list-group-cart">
-	<% @items.each do |item| %>
-	<li class="list-group-item d-flex justify-content-between align-items-center list-checkout-cart">
+	<ul class="list-group-cart">
+		<% @items.each do |item| %>
+		<li class="list-group-item d-flex justify-content-between align-items-center list-checkout-cart">
+			<div class="item-details-container">
+				<%= image_tag "#{item.image_url}", alt: "Card image", class: "product-image" %>
+				<div class="item-title-description">
+					<h3 class="title-cart"><%=item.title%></h3>
 
-		<div class="item-details-container">
-			<%= image_tag "#{item.image_url}", alt: "Card image", class: "product-image" %>
-			<div class="item-title-description">
-				<h3><%= link_to item.title, item_path(item.id)%></h3>
-				<small class="text-muted description-text-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at quam placerat, aliquet ex et, rhoncus erat. Pellentesque faucibus semper magna, id blandit enim eleifend egestas. Duis iaculis ut est in pulvinar.</small>
+					<small class="text-muted description-text-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at quam placerat, aliquet ex et, rhoncus erat. Pellentesque faucibus semper magna, id blandit enim eleifend egestas. Duis iaculis ut est in pulvinar.</small>
+				</div>
 			</div>
-		</div>
 
 		<div class="price-container">
 			<%= item.price %>€
@@ -30,7 +30,7 @@
 
 		<div class="quantity-button">
 			<div class="form-group">
-				<label for="exampleSelect1">Quantité</label>
+				<label for="exampleSelect1">Quantity: </label>
 				<div class="inputndelete">
 					<div>
 						<select class="form-control" id="exampleSelect1">
@@ -48,31 +48,23 @@
 				</div>
 			</div>
 		</div>
-	</li>
-	<% end %>
-</ul>
+		</li>
+		<% end %>
+	</ul>
 
-<div class="total">
-	<% count = 0.0 %>
-	<% @items.each do |item|%>
-	<% count += item.price %>
-	<% end %>
+	<div class="total">
+		<% count = 0.0 %>
+		<% @items.each do |item|%>
+		<% count += item.price %>
+		<% end %>
 
-
-	<hr class="total-bar" >
-	<h5 class="total-cart">Sous-total (<%= @items.count %> articles) : <span class="price-color"><%= count%>€</span></h5>
-
-
-	<%= link_to "Checkout", new_user_your_cart_better_be_full_order_path(current_user.id, current_user.cart.id), class: "btn btn-outline-primary total-cart", id: "checkout-button" %>
-
-</div>
-
-
+		<hr class="total-bar" >
+		<h5 class="total-cart">Sous-total (<%= @items.count %> articles) : <span class="price-color"><%= count%>€</span></h5>
+		<%= link_to "Checkout", new_user_your_cart_better_be_full_order_path(current_user.id, current_user.cart.id), class: "btn btn-outline-primary total-cart", id: "checkout-button" %>
+	</div>
 <% end %>
 
 <div class="space">
-
 </div>
-
 
 <%= render "layouts/footer"%>

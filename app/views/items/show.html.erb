@@ -1,35 +1,39 @@
 <body class="show-page">
-
 <%= render "layouts/colored_navbar" %>
-<div id="section1">
 
-  <div class="card show-card">
-    <h3 class="card-header"><%= @item.title %></h3>
-    <div class="card-body">
-      <h5 class="card-title"> &copy <%= Faker::Name.name  %></h5>
-      <h6 class="card-subtitle text-muted">Photographer</h6>
-    </div>
-    <%= image_tag "#{@item.image_url}", alt: "Card image", class: "show-img" %>
-    <div class="card-body">
-      <p class="card-text"><%= @item.description %></p>
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item"> <%= @item.price %> €</li>
-      <li class="list-group-item">120 x 90 cm</li>
-    </ul>
-    <div class="card-body">
-      <a href="/" class="card-link">Home Page</a>
-      
-      <%= link_to "Add to cart", item_path(@item.title), method: 'put', class:"card-link" %>
-    </div>
-    <div class="card-footer text-muted">
-      2 days ago
+  <div id="section1">
+
+    <div class="card show-card">
+      <h3 class="card-header"><%= @item.title %></h3>
+
+      <div class="card-body">
+        <h5 class="card-title"> &copy <%= Faker::Name.name  %></h5>
+        <h6 class="card-subtitle text-muted">Photographer</h6>
+      </div>
+      <%= image_tag "#{@item.image_url}", alt: "Card image", class: "show-img" %>
+
+      <div class="card-body">
+        <p class="card-text"><%= @item.description %></p>
+      </div>
+
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"> <%= @item.price %> €</li>
+        <li class="list-group-item">120 x 90 cm</li>
+      </ul>
+
+      <div class="card-body">
+        <a href="/" class="card-link">Home Page</a>
+        <%= link_to "Add to cart", item_path(@item.title), method: 'put', class:"card-link" %>
+      </div>
+
+      <div class="card-footer text-muted">
+        2 days ago
+      </div>
     </div>
   </div>
-</div>
-<div class="space">
 
-</div>
+  <div class="space"></div>
+
 <%= render 'layouts/footer' %>
 
 </body>
