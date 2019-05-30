@@ -17,7 +17,7 @@ class FavoritesController < ApplicationController
     @favorite = Favorite.find_by(user_id: current_user.id, item_id: params[:item_id])
     @favorite.destroy
       respond_to do |format|
-        format.html { redirect_to root_path }
+        format.html { redirect_to user_favorites_path(current_user.id) }
         format.js { }
       end
   end
