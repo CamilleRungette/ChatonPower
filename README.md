@@ -1,25 +1,24 @@
-# README
+### This is the Chaton-Power Website repo !
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Presentation :
+This website is a prototype exercice for an online shop  that sells cat pictures. Enjoy the cuteness!
 
-Things you may want to cover:
 
-* Ruby version
+## How to use it :
+You can either download the repo, run rails db:crete, db:migrate and db:seed, and open the project with rails server
+But there's an easy way => go to https://chaton-power-development.herokuapp.com/
 
-* System dependencies
+## Features :
+All of the basics features are here of course: user account, payement, cart, your profile
+But we are aslo very proud to present our special features :
 
-* Configuration
 
-* Database creation
+## Team :
+This is a RRCSS Team &copy project :
+- Romain Genestre
+- Ryan Zidago
+- Camille Rungette
+- Sylvain Comelli
+- Steven Nguyen
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# ChatonPower
+# Enjoy !
