@@ -1,0 +1,38 @@
+<%= render 'layouts/colored_navbar' %>
+<div class="jumbotron">
+	<h1 class="display-3">Hello, <%= current_user.first_name %> </h1>
+	<p class="lead">Welcome to your dashboard. </p>
+	<hr class="my-4">
+
+	<div class="container center-block mt-5">
+		<ul class="list-group">
+
+			<li class="list-group-item d-flex w-75 justify-content-between align-items-center">
+				Number of users
+				<span class="badge badge-primary badge-pill"><%= User.all.where(admin: false).count %></span>
+			</li>
+
+			<li class="list-group-item d-flex w-75 justify-content-between align-items-center">
+				Number of orders
+				<span class="badge badge-primary badge-pill"><% @total_orders = 0
+				Order.all.each {|order| @total_orders +=1 if order.user.cart.items.count > 0}%>
+				<%= @total_orders %></span>
+			</li>
+			<li class="list-group-item d-flex w-75 justify-content-between align-items-center">
+				Average cart value
+				<% @total_revenue = 0 %>
+				<% Order.all.each do |order| %>
+				<% order.items.each { |item| @total_revenue += item.price }%>
+				<% end %>
+				<span class="badge badge-primary badge-pill"> <%= @total_revenue/@total_orders %>€</span>
+			</li>
+			<li class="list-group-item d-flex w-75 justify-content-between align-items-center">
+				Total Revenue 
+				<span class="badge badge-primary badge-pill"><%= @total_revenue %>€</span>
+			</li>
+
+
+		</ul>
+	</div>
+
+</div>

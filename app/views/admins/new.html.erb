@@ -1,0 +1,45 @@
+<%= render 'layouts/colored_navbar' %>
+<div class="card show-card">
+  <h3 class="card-header">So you want to become a Chaton-Power admin ? </h3>
+  <div class="card-body">
+    <h5 class="card-title"> <%= @user.first_name %> <%= @user.last_name %> </h5>
+    <h6 class="card-subtitle text-muted">Member since: <%= @user.created_at %></h6>
+  </div>
+  
+  <div class="avatar-section">
+    <div class="avatar-profile">
+      <% if @user.avatar.attached? %>
+      <%= image_tag @user.avatar, alt: 'avatar', :class => 'profile-img' %>
+      <%= form_tag user_avatars_path(@user.id), multipart: true do %>
+      <%= file_field_tag :avatar, :class =>"form-control-file", onchange: 'this.form.submit();' %>
+      <% end %>
+      <% else %>
+      <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
+      <%= form_tag user_avatars_path(@user.id), multipart: true do %>
+      <%= file_field_tag :avatar, :class =>"form-control-file", onchange: 'this.form.submit();' %><br>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Contact: <%= @user.email %></li>
+  </ul>
+
+  <div class="card-body">
+    <%= link_to 'Edit my Profil', edit_user_registration_path, class: "card-link" %>
+    <%= link_to 'Become an Admin! ', admins_path, method: :post,  class: "card-link" %>
+  </div>
+
+
+  <div class="card-footer text-muted">
+
+  </div>
+
+</div>
+<div class="space">
+  
+</div>
+<%= render "layouts/footer"%>
+
+

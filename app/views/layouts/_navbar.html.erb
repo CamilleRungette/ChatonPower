@@ -7,7 +7,7 @@
 
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav ml-auto">
-      <% if user_signed_in? %>
+      <% if user_signed_in? && !current_user.admin? %>
       <li class="nav-item">
         <%= link_to "Cart", user_your_cart_better_be_full_index_path, class: "nav-link" %>
       </li>
@@ -17,6 +17,10 @@
     <li class="nav-item">
       <%= link_to "Log out", destroy_user_session_path, :class => "nav-link", :method => :delete %>
     </li>
+    <% elsif current_user.admin?%>
+    <li class="nav-item">
+        <%= link_to "Admin Dashboard", admins_index_path, class: "nav-link", :style => 'color:grey;' %>
+      </li>
     <% else %>
     <li class="nav-item">
       <%= link_to 'Sign up', new_user_registration_path, class: "nav-link", 'data-toggle' => "modal", 'data-target' => "#modalSignup" %>

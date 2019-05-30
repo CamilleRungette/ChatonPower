@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'admins/index'
+  get 'admins/new'
+  get 'admins/create'
+  get 'admins/show'
   root 'items#index'
 
   devise_for :users
@@ -21,5 +25,17 @@ Rails.application.routes.draw do
   resources :items do
     post 'search',  :on => :collection
   end
+
+
+   # For the controller to be found, first declare the admins controller before namespace declaration
+  resources :admins
+
+  # Admin dashboard
+  scope :admin do
+    root to: "admins#index"
+    resources :users
+    resources :items
+  end
+
 
 end

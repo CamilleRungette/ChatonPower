@@ -17,6 +17,10 @@
 		</p>
 
 		<p class="footer-company-name">Chaton is love, Chaton is life  &copy; 2019</p>
+		<br>
+		<% if user_signed_in? && !current_user.admin? %>
+		<p><%= link_to "Join us !", admins_new_path%></p>
+		<% end %>
 	</div>
 
 	<div class="footer-center">
