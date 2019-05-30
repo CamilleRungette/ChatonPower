@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
   	@items = Item.all
     @items = Item.where(breed: params[:breed]) if params[:breed] != nil
     @breed = params[:breed] if params[:breed] != nil
+
   end
 
   def show
