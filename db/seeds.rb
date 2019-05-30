@@ -37,7 +37,7 @@ end
 	user = User.create!(
 		first_name: first_name,
 		last_name: last_name,
-		email: first_name + last_name + "@gmail.com",
+		email: first_name + last_name + "@yopmail.com",
 		password: "foobar"
 		)
     Cart.create!(
