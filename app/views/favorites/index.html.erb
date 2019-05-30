@@ -1,7 +1,10 @@
 <%= render "layouts/colored_navbar" %>
+
+<body class="show-page">
+
 <h1 class="index-title">Your favorites</h1>
 
-<ul class="list-group-cart">
+<ul class="list-group-cart index-fave">
 	<% @user_favorite.each do |favorite| %>
 	<li class="list-group-item d-flex justify-content-between align-items-center list-checkout-cart">
 
@@ -24,3 +27,9 @@
 	</li>
 	<% end %>
 </ul>
+
+<div class="space"></div>
+
+<%= render 'layouts/footer' %>
+
+</body>
