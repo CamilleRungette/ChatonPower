@@ -14,7 +14,7 @@ But we are aslo very proud to present our special features :
 
 
 ## Team :
-This is a RRCSS Team &copy project :
+This is a RRCSSTeam project :
 - Romain Genestre
 - Ryan Zidago
 - Camille Rungette
