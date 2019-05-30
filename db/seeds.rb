@@ -26,7 +26,8 @@ Order.reset_pk_sequence
     title: Faker::Creature::Cat.name + " " + Faker::Creature::Cat.name,
     description: "lorem ipsum",
     price: rand(0..100).to_f,
-    image_url: "#{rand(1..10)}.jpeg"
+    image_url: "#{rand(1..10)}.jpeg",
+    breed: Faker::Creature::Cat.breed
   )
 end
 
