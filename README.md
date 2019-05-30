@@ -1,4 +1,4 @@
-### This is the Chaton-Power Website repo !
+# This is the Chaton-Power Website repo !
 
 ## Presentation :
 This website is a prototype exercice for an online shop  that sells cat pictures. Enjoy the cuteness!
@@ -21,4 +21,4 @@ This is a RRCSS Team &copy project :
 - Sylvain Comelli
 - Steven Nguyen
 
-# Enjoy !
+### Enjoy !
