@@ -523,3 +523,19 @@ hr {
 
 }
 
+.container-stripe {
+  background-color: #fafafa;
+  width: 60%;
+  height: 30em;
+  margin: auto;
+  text-align: center;
+  margin-top: 10%;
+}
+
+.stripe-logo {
+  width: 30%;
+}
+
+.stripe-body {
+  background-image: url("pusheen_the_cats.png");
+}
