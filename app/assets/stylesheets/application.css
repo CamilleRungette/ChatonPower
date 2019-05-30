@@ -253,15 +253,16 @@ input.search {
 .list-group-cart{
   width: 85%;
   margin: auto;
+}
 
+.index-fave{
+  width: 65%;
 }
 
 .product-image{
-  background-size: cover;
-  width: 40%;
-  height: 200px;
   align-content: right;
   margin-right: 2em;
+  height:200px;
 }
 
 .item-details-container{
