@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
     before_action :authenticate_user, only: [:update, :destroy]
 
   def index
-  	@item = Item.all
+  	@items = Item.all
   end
 
   def show

@@ -2,18 +2,18 @@ class OrdersController < ApplicationController
 
   def new
     @items = User.find(current_user.id).cart.items
-    @amount = 0 
-    @items.each do |item| 
+    @amount = 0
+    @items.each do |item|
       @amount += item.price
-    end 
+    end
   end
 
   def create
     @items = User.find(current_user.id).cart.items
-    @amount = 0 
-    @items.each do |item| 
+    @amount = 0
+    @items.each do |item|
       @amount += item.price
-    end 
+    end
 
     customer = Stripe::Customer.create({
       email: params[:stripeEmail],
@@ -26,8 +26,8 @@ class OrdersController < ApplicationController
       description: 'Rails Stripe customer',
       currency: 'eur',
     })
-  redirect_to user_cart_order_path(current_user.id, current_user.cart.id, current_user.id)
-    
+  redirect_to user_your_cart_better_be_full_order_path(current_user.id, current_user.cart.id, current_user.id)
+
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_charge_path

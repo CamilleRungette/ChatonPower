@@ -31,10 +31,10 @@
 	</div>
 	<br/>
 	<div class="flex-container">
-		<% @item.each do |item| %>
+		<% @items.each do |item| %>
 		<% @title = item.title %>
 		<% @price = item.price %>
-		<% @image = item.image_url %>
+		<% @image_url = item.image_url %>
 		<% @id = item.id %>
 		<div>
 			<%= render "card" %>
@@ -43,4 +43,3 @@
 	</div>
 	<%= render "layouts/footer"%>
 </div>
-
