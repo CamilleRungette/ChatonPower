@@ -1,0 +1,26 @@
+<%= render "layouts/colored_navbar" %>
+<h1 class="index-title">Your favorites</h1>
+
+<ul class="list-group-cart">
+	<% @user_favorite.each do |favorite| %>
+	<li class="list-group-item d-flex justify-content-between align-items-center list-checkout-cart">
+
+		<div class="item-details-container">
+			<%= image_tag "#{favorite.item.image_url}", alt: "Card image", class: "product-image" %>
+			<div class="item-title-description">
+				<h3><%= link_to "#{favorite.item.title}", item_path(favorite.item.title) %>			<% if already_favorite?(favorite.item.id) != true %>
+					<%= link_to "", item_favorites_path(favorite.item.id), method: 'post', class:"card-link far fa-star" %>
+					<% else %>
+					<%= link_to "", item_favorite_path(favorite.item.id, focus_favorite(favorite.item.id)), method: 'delete', class:"card-link fas fa-star" %>
+					<% end %>
+				</h3>
+				<small class="text-muted description-text-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at quam placerat, aliquet ex et, rhoncus erat. Pellentesque faucibus semper magna, id blandit enim eleifend egestas. Duis iaculis ut est in pulvinar.</small>
+			</div>
+		</div>
+
+		<div class="price-container">
+			<%= favorite.item.price %>€
+		</div>
+	</li>
+	<% end %>
+</ul>

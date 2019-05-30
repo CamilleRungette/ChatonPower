@@ -19,7 +19,7 @@
 		<div class="item-details-container">
 			<%= image_tag "#{item.image_url}", alt: "Card image", class: "product-image" %>
 			<div class="item-title-description">
-				<h3><%= link_to item.title, item_path(item.id)%></h3>
+				<h3><%= link_to item.title, item_path(item.title)%></h3>
 				<small class="text-muted description-text-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at quam placerat, aliquet ex et, rhoncus erat. Pellentesque faucibus semper magna, id blandit enim eleifend egestas. Duis iaculis ut est in pulvinar.</small>
 			</div>
 		</div>

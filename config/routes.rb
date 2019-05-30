@@ -22,4 +22,11 @@ Rails.application.routes.draw do
     post 'search',  :on => :collection
   end
 
+  resources :items do
+    resources :favorites
+  end
+
+  resources :users do
+    resources :favorites
+  end
 end

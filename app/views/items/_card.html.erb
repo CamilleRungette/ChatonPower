@@ -1,8 +1,14 @@
 <div class="card card-content mb-3">
-	<h3 class="card-header" style="text-align: center;"> <%= @title %> </h3>
-	  <%= image_tag "#{@image_url}", alt: "Card image", class: "cat-picture" %>
+	<h3 class="card-header" style="text-align: center;"> 
+		<%= @title %>
+		<% if user_signed_in? && already_favorite?(@id) != true %>
+		<%= link_to "", item_favorites_path(@id), method: 'post', class:"card-link far fa-star" %>
+		<% elsif user_signed_in? && already_favorite?(@id) == true %>
+		<%= link_to "", item_favorite_path(@id, focus_favorite(@id)), method: 'delete', class:"card-link fas fa-star" %>
+		<% end %>
+	</h3>
+	<%= image_tag "#{@image_url}", alt: "Card image", class: "cat-picture" %>
 	<div class="card-body" >
-
 		<p class="card-text" style="float:left;"> <%= @price%> € </p>
 		<%= link_to "Plus d'infos", item_path(@title), style: "float:right"%>
 		<% if user_signed_in? %>
