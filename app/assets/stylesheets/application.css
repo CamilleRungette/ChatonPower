@@ -47,10 +47,6 @@ input.search {
   display: inline-block;
   vertical-align: middle;
 }
-.search-bar {
-  display: flex;
-  flex-direction: row;
-}
 
 .search {
   width: 200px;
