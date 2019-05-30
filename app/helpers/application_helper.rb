@@ -16,4 +16,11 @@ module ApplicationHelper
     return cart_items_count
   end
 
+  def already_favorite?(item)
+    User.find(current_user.id).favorites.where(item_id: item).exists?
+  end
+
+  def focus_favorite(item)
+    Favorite.where(item_id: item)
+  end
 end
