@@ -4,7 +4,7 @@
 		<% if user_signed_in? && already_favorite?(@id) != true %>
 		<%= link_to "", item_favorites_path(@id), remote: true, method: 'post', class:"card-link far fa-star", id:"favorite#{@id}" %>
 		<% elsif user_signed_in? && already_favorite?(@id) == true %>
-		<%= link_to "", item_favorite_path(@id, focus_favorite(@id)), method: 'delete', class:"card-link fas fa-star" %>
+		<%= link_to "", item_favorite_path(@id, focus_favorite(@id)), remote: true, method: 'delete', class:"card-link fas fa-star", id:"favorite#{@id}" %>
 		<% end %>
 	</h3>
 	<%= image_tag "#{@image_url}", alt: "Card image", class: "cat-picture" %>
