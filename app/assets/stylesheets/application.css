@@ -221,8 +221,11 @@ body {
   min-width: 40em;
   margin: auto;
   margin-top: 6%;
-  margin-bottom: 6%;
   text-align: center;
+}
+
+.show-page {
+  height: 16em;
 }
 
 .show-img {
@@ -371,15 +374,15 @@ hr {
 
 .footer-distributed{
   position: absolute;
+  bottom: 0;
   background-color: #292c2f;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
   width: 100%;
-  text-align: left;
   font: bold 16px sans-serif;
-  bottom: 0;
   padding: 55px 50px;
   margin-top: 80px;
+  margin-bottom: -80px;
 }
 
 .footer-distributed .footer-left,
@@ -387,6 +390,7 @@ hr {
 .footer-distributed .footer-right{
   display: inline-block;
   vertical-align: top;
+
 }
 
 /* Footer left */
