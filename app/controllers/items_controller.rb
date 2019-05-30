@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+    before_action :authenticate_user, only: [:update, :destroy]
+
   def index
   	@item = Item.all
   end
@@ -18,8 +20,8 @@ class ItemsController < ApplicationController
       @cart = current_user.cart.id
       JoinTableCartItem.create!(cart_id: @cart, item_id: @item.id)
       redirect_to root_path
-    else
-      root_path
+    else 
+      redirect_to root_path
     end
   end
 
@@ -29,4 +31,15 @@ class ItemsController < ApplicationController
     @cart.delete
     redirect_to user_carts_path(current_user.id)
   end
+
+private
+
+  def authenticate_user
+    unless user_signed_in?
+      flash[:danger] = "Please log in, or sign in."
+
+    end
+  end
+
 end
+
