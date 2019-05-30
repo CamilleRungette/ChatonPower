@@ -22,4 +22,8 @@ Rails.application.routes.draw do
   resources :items
   resources :charges
 
+  resources :items do
+    post 'search',  :on => :collection
+  end
+
 end

@@ -4,8 +4,12 @@ class ItemsController < ApplicationController
   end
 
   def show
-  	@item = Item.friendly.find_by(title: params[:id])
-    
+    @item = Item.friendly.find_by(title: params[:id])
+  end
+
+  def search
+    cleaned_search = params[:search].split.each { |word| word.capitalize! }.join(' ')
+    @item = Item.friendly.find_by(title: cleaned_search)
   end
 
   def update
