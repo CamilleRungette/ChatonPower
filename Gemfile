@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem 'rubocop-rails'
+gem 'rubocop', '~> 0.71.0', require: false
 gem 'friendly_id', '~> 5.2.4'
 gem 'dotenv-rails'
 gem 'mailjet'

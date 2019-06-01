@@ -1,0 +1,1775 @@
+Inspecting 103 files
+CCCCCCCCCCCCCCCCCCCCWCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCWCCCCCCCCCCCCCCCCCCCCC
+
+Offenses:
+
+Gemfile:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+source 'https://rubygems.org'
+^
+Gemfile:7:1: C: Bundler/OrderedGems: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem rubocop should appear before rubocop-rails.
+gem 'rubocop', '~> 0.71.0', require: false
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:8:1: C: Bundler/OrderedGems: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem friendly_id should appear before rubocop.
+gem 'friendly_id', '~> 5.2.4'
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:9:1: C: Bundler/OrderedGems: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem dotenv-rails should appear before friendly_id.
+gem 'dotenv-rails'
+^^^^^^^^^^^^^^^^^^
+Gemfile:12:5: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+gem "aws-sdk-s3", require: false
+    ^^^^^^^^^^^^
+Gemfile:13:1: C: Bundler/OrderedGems: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem activerecord-reset-pk-sequence should appear before aws-sdk-s3.
+gem 'activerecord-reset-pk-sequence'
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:15:1: C: Bundler/OrderedGems: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem faker should appear before jquery-rails.
+gem 'faker'
+^^^^^^^^^^^
+Gemfile:17:1: C: Bundler/OrderedGems: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem better_errors should appear before table_print.
+gem 'better_errors'
+^^^^^^^^^^^^^^^^^^^
+Gemfile:52:81: C: Metrics/LineLength: Line is too long. [83/80]
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+                                                                                ^^^
+Gemfile:53:28: C: Style/SymbolArray: Use %i or %I for an array of symbols.
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:57:81: C: Metrics/LineLength: Line is too long. [98/80]
+  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
+                                                                                ^^^^^^^^^^^^^^^^^^
+Gemfile:59:3: C: Bundler/OrderedGems: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem listen should appear before web-console.
+  gem 'listen', '>= 3.0.5', '< 3.2'
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:60:81: C: Metrics/LineLength: Line is too long. [130/80]
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:74:31: C: Style/SymbolArray: Use %i or %I for an array of symbols.
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:76:13: C: Style/AsciiComments: Use only ascii symbols in comments.
+# Gems supplémentaires
+            ^
+config.ru:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+# This file is used by Rack-based servers to start the application.
+^
+Rakefile:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+# Add your own tasks in files placed in lib/tasks ending in .rake,
+^
+Rakefile:2:81: C: Metrics/LineLength: Line is too long. [90/80]
+# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
+                                                                                ^^^^^^^^^^
+app/models/order.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class Order < ApplicationRecord
+^^^^^
+app/models/order.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class Order < ApplicationRecord
+^
+app/models/order.rb:8:3: C: Layout/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
+  private
+  ^^^^^^^
+app/models/item.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class Item < ApplicationRecord
+^^^^^
+app/models/item.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class Item < ApplicationRecord
+^
+app/models/item.rb:12:3: C: Layout/AlignArguments: Align the arguments of a method call if they span more than one line.
+  presence: true, ...
+  ^^^^^^^^^^^^^^^
+app/models/item.rb:16:3: C: Layout/AlignArguments: Align the arguments of a method call if they span more than one line.
+  presence: true, ...
+  ^^^^^^^^^^^^^^^
+app/models/item.rb:20:3: C: Layout/AlignArguments: Align the arguments of a method call if they span more than one line.
+  presence: true, ...
+  ^^^^^^^^^^^^^^^
+app/models/item.rb:24:3: C: Layout/AlignArguments: Align the arguments of a method call if they span more than one line.
+  presence: true
+  ^^^^^^^^^^^^^^
+app/models/item.rb:26:3: C: Rails/HasManyOrHasOneDependent: Specify a :dependent option.
+  has_many :favorites
+  ^^^^^^^^
+app/models/item.rb:28:1: C: Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body end.
+app/models/user.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class User < ApplicationRecord
+^^^^^
+app/models/user.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class User < ApplicationRecord
+^
+app/models/user.rb:14:1: C: Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	after_create :create_cart, :welcome_send
+^
+app/models/user.rb:14:1: C: Layout/Tab: Tab detected.
+	after_create :create_cart, :welcome_send
+^
+app/models/user.rb:14:2: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+	after_create :create_cart, :welcome_send
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/user.rb:16:3: C: Rails/HasManyOrHasOneDependent: Specify a :dependent option.
+  has_many :favorites
+  ^^^^^^^^
+app/models/user.rb:19:3: C: Layout/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
+  private
+  ^^^^^^^
+app/models/user.rb:21:3: C: Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+  	Cart.create!(user_id: self.id)
+  ^
+app/models/user.rb:21:3: C: Layout/Tab: Tab detected.
+  	Cart.create!(user_id: self.id)
+  ^
+app/models/user.rb:21:26: C: Style/RedundantSelf: Redundant self detected.
+  	Cart.create!(user_id: self.id)
+                         ^^^^^^^
+app/models/user.rb:27:1: C: Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body end.
+app/models/application_record.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class ApplicationRecord < ActiveRecord::Base
+^^^^^
+app/models/application_record.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class ApplicationRecord < ActiveRecord::Base
+^
+app/models/join_table_order_item.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class JoinTableOrderItem < ApplicationRecord
+^^^^^
+app/models/join_table_order_item.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class JoinTableOrderItem < ApplicationRecord
+^
+app/models/join_table_cart_item.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class JoinTableCartItem < ApplicationRecord
+^^^^^
+app/models/join_table_cart_item.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class JoinTableCartItem < ApplicationRecord
+^
+app/models/favorite.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class Favorite < ApplicationRecord
+^^^^^
+app/models/favorite.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class Favorite < ApplicationRecord
+^
+app/models/cart.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class Cart < ApplicationRecord
+^^^^^
+app/models/cart.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class Cart < ApplicationRecord
+^
+app/controllers/favorites_controller.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class FavoritesController < ApplicationController
+^^^^^
+app/controllers/favorites_controller.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class FavoritesController < ApplicationController
+^
+app/controllers/favorites_controller.rb:7:81: C: Metrics/LineLength: Line is too long. [84/80]
+    @favorite = Favorite.create(user_id: current_user.id, item_id: params[:item_id])
+                                                                                ^^^^
+app/controllers/favorites_controller.rb:8:5: C: Style/GuardClause: Use a guard clause instead of wrapping the code inside a conditional expression.
+    if @favorite.save
+    ^^
+app/controllers/favorites_controller.rb:11:20: C: Layout/SpaceInsideBlockBraces: Space inside empty braces detected.
+        format.js { }
+                   ^
+app/controllers/favorites_controller.rb:17:81: C: Metrics/LineLength: Line is too long. [85/80]
+    @favorite = Favorite.find_by(user_id: current_user.id, item_id: params[:item_id])
+                                                                                ^^^^^
+app/controllers/favorites_controller.rb:19:7: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+      respond_to do |format| ...
+      ^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/favorites_controller.rb:21:20: C: Layout/SpaceInsideBlockBraces: Space inside empty braces detected.
+        format.js { }
+                   ^
+app/controllers/admins_controller.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class AdminsController < ApplicationController
+^^^^^
+app/controllers/admins_controller.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class AdminsController < ApplicationController
+^
+app/controllers/admins_controller.rb:2:1: C: Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	before_action :authenticate_user
+^
+app/controllers/admins_controller.rb:2:1: C: Layout/Tab: Tab detected.
+	before_action :authenticate_user
+^
+app/controllers/admins_controller.rb:3:1: C: Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	before_action :is_admin, only: [:index, :show]
+^
+app/controllers/admins_controller.rb:3:1: C: Layout/Tab: Tab detected.
+	before_action :is_admin, only: [:index, :show]
+^
+app/controllers/admins_controller.rb:3:33: C: Style/SymbolArray: Use %i or %I for an array of symbols.
+	before_action :is_admin, only: [:index, :show]
+                                ^^^^^^^^^^^^^^^
+app/controllers/admins_controller.rb:5:1: C: Layout/EmptyLines: Extra blank line detected.
+app/controllers/admins_controller.rb:6:1: C: Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	def index
+^
+app/controllers/admins_controller.rb:6:1: C: Layout/Tab: Tab detected.
+	def index
+^
+app/controllers/admins_controller.rb:6:2: C: Style/EmptyMethod: Put empty method definitions on a single line.
+	def index ...
+ ^^^^^^^^^
+app/controllers/admins_controller.rb:7:1: C: Layout/Tab: Tab detected.
+	end
+^
+app/controllers/admins_controller.rb:9:1: C: Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	def new
+^
+app/controllers/admins_controller.rb:9:1: C: Layout/Tab: Tab detected.
+	def new
+^
+app/controllers/admins_controller.rb:10:1: C: Layout/Tab: Tab detected.
+		@user = current_user
+^^
+app/controllers/admins_controller.rb:10:2: C: Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+		@user = current_user
+ ^
+app/controllers/admins_controller.rb:11:1: C: Layout/Tab: Tab detected.
+	end
+^
+app/controllers/admins_controller.rb:13:1: C: Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	def create
+^
+app/controllers/admins_controller.rb:13:1: C: Layout/Tab: Tab detected.
+	def create
+^
+app/controllers/admins_controller.rb:14:1: C: Layout/Tab: Tab detected.
+		current_user.update_attribute :admin, true
+^^
+app/controllers/admins_controller.rb:14:2: C: Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+		current_user.update_attribute :admin, true
+ ^
+app/controllers/admins_controller.rb:14:16: C: Rails/SkipsModelValidations: Avoid using update_attribute because it skips validations.
+		current_user.update_attribute :admin, true
+               ^^^^^^^^^^^^^^^^
+app/controllers/admins_controller.rb:15:1: C: Layout/Tab: Tab detected.
+		redirect_to admin_path(current_user.id)
+^^
+app/controllers/admins_controller.rb:16:1: C: Layout/Tab: Tab detected.
+	end
+^
+app/controllers/admins_controller.rb:18:1: C: Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	def show
+^
+app/controllers/admins_controller.rb:18:1: C: Layout/Tab: Tab detected.
+	def show
+^
+app/controllers/admins_controller.rb:19:1: C: Layout/Tab: Tab detected.
+		@user = current_user
+^^
+app/controllers/admins_controller.rb:19:2: C: Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+		@user = current_user
+ ^
+app/controllers/admins_controller.rb:20:1: C: Layout/Tab: Tab detected.
+	end
+^
+app/controllers/admins_controller.rb:22:1: C: Layout/EmptyLines: Extra blank line detected.
+app/controllers/admins_controller.rb:23:1: C: Layout/Tab: Tab detected.
+	private
+^
+app/controllers/admins_controller.rb:23:2: C: Layout/AccessModifierIndentation: Indent access modifiers like private.
+	private
+ ^^^^^^^
+app/controllers/admins_controller.rb:23:2: C: Layout/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
+	private
+ ^^^^^^^
+app/controllers/admins_controller.rb:24:1: C: Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	def authenticate_user
+^
+app/controllers/admins_controller.rb:24:1: C: Layout/Tab: Tab detected.
+	def authenticate_user
+^
+app/controllers/admins_controller.rb:25:1: C: Layout/Tab: Tab detected.
+		redirect_to root_path unless user_signed_in?
+^^
+app/controllers/admins_controller.rb:25:2: C: Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+		redirect_to root_path unless user_signed_in?
+ ^
+app/controllers/admins_controller.rb:26:1: C: Layout/Tab: Tab detected.
+	end
+^
+app/controllers/admins_controller.rb:28:1: C: Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	def is_admin
+^
+app/controllers/admins_controller.rb:28:1: C: Layout/Tab: Tab detected.
+	def is_admin
+^
+app/controllers/admins_controller.rb:28:6: C: Naming/PredicateName: Rename is_admin to admin?.
+	def is_admin
+     ^^^^^^^^
+app/controllers/admins_controller.rb:29:1: C: Layout/Tab: Tab detected.
+		current_user.admin?
+^^
+app/controllers/admins_controller.rb:29:2: C: Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+		current_user.admin?
+ ^
+app/controllers/admins_controller.rb:30:1: C: Layout/Tab: Tab detected.
+	end
+^
+app/controllers/admins_controller.rb:31:1: C: Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body end.
+app/controllers/carts_controller.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class CartsController < ApplicationController
+^^^^^
+app/controllers/carts_controller.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class CartsController < ApplicationController
+^
+app/controllers/carts_controller.rb:2:3: C: Metrics/AbcSize: Assignment Branch Condition size for index is too high. [15.81/15]
+  def index ...
+  ^^^^^^^^^
+app/controllers/carts_controller.rb:4:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+app/controllers/carts_controller.rb:8:53: C: Style/AsciiComments: Use only ascii symbols in comments.
+      redirect_to root_path # Si le user tente d'accéder au panier sans sign in
+                                                    ^
+app/controllers/carts_controller.rb:11:61: C: Style/NonNilCheck: Prefer !expression.nil? over expression != nil.
+    @items = User.find(current_user.id).cart.items if @cart != nil # Si le panier est vide
+                                                            ^^
+app/controllers/carts_controller.rb:11:81: C: Metrics/LineLength: Line is too long. [90/80]
+    @items = User.find(current_user.id).cart.items if @cart != nil # Si le panier est vide
+                                                                                ^^^^^^^^^^
+app/controllers/carts_controller.rb:14:3: C: Metrics/AbcSize: Assignment Branch Condition size for destroy is too high. [18.11/15]
+  def destroy ...
+  ^^^^^^^^^^^
+app/controllers/carts_controller.rb:16:81: C: Metrics/LineLength: Line is too long. [90/80]
+    @cart = JoinTableCartItem.where(cart_id: current_user.cart).find_by(item_id: @item.id)
+                                                                                ^^^^^^^^^^
+app/controllers/custom_failure_controller.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class CustomFailure < Devise::FailureApp
+^^^^^
+app/controllers/custom_failure_controller.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class CustomFailure < Devise::FailureApp
+^
+app/controllers/custom_failure_controller.rb:3:3: C: Layout/IndentationWidth: Use 2 (not 3) spaces for indentation.
+     new_user_session_url(:subdomain => 'secure')
+  ^^^
+app/controllers/custom_failure_controller.rb:3:27: C: Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+     new_user_session_url(:subdomain => 'secure')
+                          ^^^^^^^^^^^^^
+app/controllers/join_table_order_items_controller.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class JoinTableOrderItemsController < ApplicationController
+^
+app/controllers/application_controller.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class ApplicationController < ActionController::Base
+^^^^^
+app/controllers/application_controller.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class ApplicationController < ActionController::Base
+^
+app/controllers/application_controller.rb:2:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    before_action :configure_permitted_parameters, if: :devise_controller?
+^^^^
+app/controllers/application_controller.rb:6:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+  def configure_permitted_parameters ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:7:55: C: Style/SymbolArray: Use %i or %I for an array of symbols.
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :email, :password])
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:7:81: C: Metrics/LineLength: Line is too long. [99/80]
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :email, :password])
+                                                                                ^^^^^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:8:62: C: Style/SymbolArray: Use %i or %I for an array of symbols.
+    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name,:email,:password])
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:8:81: C: Metrics/LineLength: Line is too long. [104/80]
+    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name,:email,:password])
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:8:86: C: Layout/SpaceAfterComma: Space missing after comma.
+    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name,:email,:password])
+                                                                                     ^
+app/controllers/application_controller.rb:8:93: C: Layout/SpaceAfterComma: Space missing after comma.
+    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name,:email,:password])
+                                                                                            ^
+app/controllers/users_controller.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class UsersController < ApplicationController
+^^^^^
+app/controllers/users_controller.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class UsersController < ApplicationController
+^
+app/controllers/users_controller.rb:16:5: C: Style/GuardClause: Use a guard clause instead of wrapping the code inside a conditional expression.
+    if current_user != User.friendly.find(params[:id])
+    ^^
+app/controllers/users_controller.rb:16:5: C: Style/IfUnlessModifier: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+    if current_user != User.friendly.find(params[:id])
+    ^^
+app/controllers/avatars_controller.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class AvatarsController < ApplicationController
+^^^^^
+app/controllers/avatars_controller.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class AvatarsController < ApplicationController
+^
+app/controllers/items_controller.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class ItemsController < ApplicationController
+^^^^^
+app/controllers/items_controller.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class ItemsController < ApplicationController
+^
+app/controllers/items_controller.rb:2:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    before_action :authenticate_user, only: [:update, :destroy]
+^^^^
+app/controllers/items_controller.rb:2:45: C: Style/SymbolArray: Use %i or %I for an array of symbols.
+    before_action :authenticate_user, only: [:update, :destroy]
+                                            ^^^^^^^^^^^^^^^^^^^
+app/controllers/items_controller.rb:4:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+  def index ...
+  ^^^^^^^^^
+app/controllers/items_controller.rb:5:3: C: Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+  	@items = Item.all
+  ^
+app/controllers/items_controller.rb:5:3: C: Layout/Tab: Tab detected.
+  	@items = Item.all
+  ^
+app/controllers/items_controller.rb:6:5: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+    @items = Item.where(breed: params[:breed]) if params[:breed] != nil
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/items_controller.rb:6:66: C: Style/NonNilCheck: Prefer !expression.nil? over expression != nil.
+    @items = Item.where(breed: params[:breed]) if params[:breed] != nil
+                                                                 ^^
+app/controllers/items_controller.rb:7:5: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+    @breed = params[:breed] if params[:breed] != nil
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/items_controller.rb:7:47: C: Style/NonNilCheck: Prefer !expression.nil? over expression != nil.
+    @breed = params[:breed] if params[:breed] != nil
+                                              ^^
+app/controllers/items_controller.rb:8:1: C: Layout/EmptyLinesAroundMethodBody: Extra empty line detected at method body end.
+app/controllers/items_controller.rb:11:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+  def show ...
+  ^^^^^^^^
+app/controllers/items_controller.rb:15:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+  def search ...
+  ^^^^^^^^^^
+app/controllers/items_controller.rb:16:49: C: Style/SymbolProc: Pass &:capitalize! as an argument to each instead of a block.
+    cleaned_search = params[:search].split.each { |word| word.capitalize! }.join(' ')
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/items_controller.rb:16:81: C: Metrics/LineLength: Line is too long. [85/80]
+    cleaned_search = params[:search].split.each { |word| word.capitalize! }.join(' ')
+                                                                                ^^^^^
+app/controllers/items_controller.rb:20:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+  def update ...
+  ^^^^^^^^^^
+app/controllers/items_controller.rb:20:3: C: Metrics/AbcSize: Assignment Branch Condition size for update is too high. [17.23/15]
+  def update ...
+  ^^^^^^^^^^
+app/controllers/items_controller.rb:20:3: C: Metrics/MethodLength: Method has too many lines. [11/10]
+  def update ...
+  ^^^^^^^^^^
+app/controllers/items_controller.rb:27:20: C: Layout/SpaceInsideBlockBraces: Space inside empty braces detected.
+        format.js { }
+                   ^
+app/controllers/items_controller.rb:34:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+  def destroy ...
+  ^^^^^^^^^^^
+app/controllers/items_controller.rb:34:3: C: Metrics/AbcSize: Assignment Branch Condition size for destroy is too high. [18.11/15]
+  def destroy ...
+  ^^^^^^^^^^^
+app/controllers/items_controller.rb:36:81: C: Metrics/LineLength: Line is too long. [90/80]
+    @cart = JoinTableCartItem.where(cart_id: current_user.cart).find_by(item_id: @item.id)
+                                                                                ^^^^^^^^^^
+app/controllers/items_controller.rb:41:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+  def authenticate_user ...
+  ^^^^^^^^^^^^^^^^^^^^^
+app/controllers/items_controller.rb:42:5: C: Style/GuardClause: Use a guard clause instead of wrapping the code inside a conditional expression.
+    unless user_signed_in?
+    ^^^^^^
+app/controllers/items_controller.rb:42:5: C: Style/IfUnlessModifier: Favor modifier unless usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+    unless user_signed_in?
+    ^^^^^^
+app/controllers/items_controller.rb:43:24: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      flash[:danger] = "Please log in, or sign in."
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/items_controller.rb:47:1: C: Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body end.
+app/controllers/orders_controller.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class OrdersController < ApplicationController
+^^^^^
+app/controllers/orders_controller.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class OrdersController < ApplicationController
+^
+app/controllers/orders_controller.rb:2:1: C: Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body beginning.
+app/controllers/orders_controller.rb:11:3: C: Metrics/AbcSize: Assignment Branch Condition size for create is too high. [30.1/15]
+  def create ...
+  ^^^^^^^^^^
+app/controllers/orders_controller.rb:11:3: C: Metrics/MethodLength: Method has too many lines. [19/10]
+  def create ...
+  ^^^^^^^^^^
+app/controllers/orders_controller.rb:18:40: C: Style/BracesAroundHashParameters: Redundant curly braces around a hash parameter.
+    customer = Stripe::Customer.create({ ...
+                                       ^
+app/controllers/orders_controller.rb:19:7: C: Layout/IndentFirstHashElement: Use 2 spaces for indentation in a hash, relative to the first position after the preceding left parenthesis.
+      email: params[:stripeEmail],
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/orders_controller.rb:20:35: C: Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.
+      source: params[:stripeToken],
+                                  ^
+app/controllers/orders_controller.rb:21:5: C: Layout/IndentFirstHashElement: Indent the right brace the same as the first position after the preceding left parenthesis.
+    })
+    ^
+app/controllers/orders_controller.rb:23:5: W: Lint/UselessAssignment: Useless assignment to variable - charge.
+    charge = Stripe::Charge.create({
+    ^^^^^^
+app/controllers/orders_controller.rb:23:36: C: Style/BracesAroundHashParameters: Redundant curly braces around a hash parameter.
+    charge = Stripe::Charge.create({ ...
+                                   ^
+app/controllers/orders_controller.rb:24:7: C: Layout/IndentFirstHashElement: Use 2 spaces for indentation in a hash, relative to the first position after the preceding left parenthesis.
+      customer: customer.id,
+      ^^^^^^^^^^^^^^^^^^^^^
+app/controllers/orders_controller.rb:25:15: C: Style/RedundantParentheses: Don't use parentheses around a method call.
+      amount: (@amount.to_i)*100,
+              ^^^^^^^^^^^^^^
+app/controllers/orders_controller.rb:25:29: C: Layout/SpaceAroundOperators: Surrounding space missing for operator *.
+      amount: (@amount.to_i)*100,
+                            ^
+app/controllers/orders_controller.rb:27:22: C: Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.
+      currency: 'eur',
+                     ^
+app/controllers/orders_controller.rb:28:5: C: Layout/IndentFirstHashElement: Indent the right brace the same as the first position after the preceding left parenthesis.
+    })
+    ^
+app/controllers/orders_controller.rb:29:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+  redirect_to user_your_cart_better_be_full_order_path(current_user.id, current_user.cart.id, current_user.id)
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/orders_controller.rb:29:81: C: Metrics/LineLength: Line is too long. [110/80]
+  redirect_to user_your_cart_better_be_full_order_path(current_user.id, current_user.cart.id, current_user.id)
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/orders_controller.rb:30:1: C: Layout/EmptyLinesAroundExceptionHandlingKeywords: Extra empty line detected before the rescue.
+app/controllers/orders_controller.rb:36:3: C: Metrics/AbcSize: Assignment Branch Condition size for show is too high. [19.65/15]
+  def show ...
+  ^^^^^^^^
+app/controllers/orders_controller.rb:36:3: C: Metrics/MethodLength: Method has too many lines. [15/10]
+  def show ...
+  ^^^^^^^^
+app/controllers/orders_controller.rb:48:14: C: Style/EmptyLiteral: Use array literal [] instead of Array.new.
+    @total = Array.new
+             ^^^^^^^^^
+app/controllers/orders_controller.rb:54:1: C: Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body end.
+app/controllers/join_table_cart_items_controller.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class JoinTableCartItemsController < ApplicationController
+^
+app/mailers/user_mailer.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class UserMailer < ApplicationMailer
+^^^^^
+app/mailers/user_mailer.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class UserMailer < ApplicationMailer
+^
+app/mailers/user_mailer.rb:6:12: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    @url = "https://chaton-power.herokuapp.com"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/mailers/user_mailer.rb:8:36: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    mail(to: @user.email, subject: "Welcome to Chaton-power !")
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/mailers/user_mailer.rb:12:3: C: Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+  	@order = order
+  ^
+app/mailers/user_mailer.rb:12:3: C: Layout/Tab: Tab detected.
+  	@order = order
+  ^
+app/mailers/user_mailer.rb:13:5: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+    @current_user = @order.user
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/mailers/user_mailer.rb:14:5: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+    @cart = @current_user.cart
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/mailers/user_mailer.rb:15:3: C: Layout/Tab: Tab detected.
+  	@items = @current_user.cart.items
+  ^
+app/mailers/user_mailer.rb:16:3: C: Layout/Tab: Tab detected.
+  	@url = "https://chaton-power.herokuapp.com"
+  ^
+app/mailers/user_mailer.rb:16:11: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  	@url = "https://chaton-power.herokuapp.com"
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/mailers/user_mailer.rb:17:5: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+    mail(to: @current_user.email, subject: "Thank you for your order !")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/mailers/user_mailer.rb:17:44: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    mail(to: @current_user.email, subject: "Thank you for your order !")
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/mailers/user_mailer.rb:25:7: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+      @items.each do |item| ...
+      ^^^^^^^^^^^^^^^^^^^^^
+app/mailers/user_mailer.rb:26:7: C: Layout/IndentationWidth: Use 2 (not 0) spaces for indentation.
+      @count += item.price
+      
+app/mailers/user_mailer.rb:28:12: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    @url = "https://chaton-power.herokuapp.com"
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/mailers/user_mailer.rb:29:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    mail(to: "chaton-power@yopmail.com", subject: "New order :")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/mailers/user_mailer.rb:29:51: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    mail(to: "chaton-power@yopmail.com", subject: "New order :")
+                                                  ^^^^^^^^^^^^^
+app/mailers/user_mailer.rb:31:1: C: Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body end.
+app/mailers/user_mailer.rb:33:1: C: Layout/TrailingBlankLines: 1 trailing blank lines detected.
+app/mailers/application_mailer.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class ApplicationMailer < ActionMailer::Base
+^^^^^
+app/mailers/application_mailer.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class ApplicationMailer < ActionMailer::Base
+^
+app/channels/application_cable/connection.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+module ApplicationCable
+^
+app/channels/application_cable/channel.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+module ApplicationCable
+^
+app/jobs/application_job.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class ApplicationJob < ActiveJob::Base
+^
+app/helpers/orders_helper.rb:1:1: C: Style/Documentation: Missing top-level module documentation comment.
+module OrdersHelper
+^^^^^^
+app/helpers/orders_helper.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+module OrdersHelper
+^
+app/helpers/admins_helper.rb:1:1: C: Style/Documentation: Missing top-level module documentation comment.
+module AdminsHelper
+^^^^^^
+app/helpers/admins_helper.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+module AdminsHelper
+^
+app/helpers/items_helper.rb:1:1: C: Style/Documentation: Missing top-level module documentation comment.
+module ItemsHelper
+^^^^^^
+app/helpers/items_helper.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+module ItemsHelper
+^
+app/helpers/carts_helper.rb:1:1: C: Style/Documentation: Missing top-level module documentation comment.
+module CartsHelper
+^^^^^^
+app/helpers/carts_helper.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+module CartsHelper
+^
+app/helpers/avatars_helper.rb:1:1: C: Style/Documentation: Missing top-level module documentation comment.
+module AvatarsHelper
+^^^^^^
+app/helpers/avatars_helper.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+module AvatarsHelper
+^
+app/helpers/application_helper.rb:1:1: C: Style/Documentation: Missing top-level module documentation comment.
+module ApplicationHelper
+^^^^^^
+app/helpers/application_helper.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+module ApplicationHelper
+^
+app/helpers/application_helper.rb:7:5: C: Rails/HelperInstanceVariable: Do not use instance variables in helpers.
+    @resource ||= User.new
+    ^^^^^^^^^
+app/helpers/application_helper.rb:11:5: C: Rails/HelperInstanceVariable: Do not use instance variables in helpers.
+    @devise_mapping ||= Devise.mappings[:user]
+    ^^^^^^^^^^^^^^^
+app/helpers/application_helper.rb:15:67: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+    cart_items_count = User.find(current_user.id).cart.items.count 
+                                                                  ^
+app/helpers/application_helper.rb:16:5: C: Style/RedundantReturn: Redundant return detected.
+    return cart_items_count
+    ^^^^^^
+app/helpers/users_helper.rb:1:1: C: Style/Documentation: Missing top-level module documentation comment.
+module UsersHelper
+^^^^^^
+app/helpers/users_helper.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+module UsersHelper
+^
+app/helpers/custom_failure_helper.rb:1:1: C: Style/Documentation: Missing top-level module documentation comment.
+module CustomFailureHelper
+^^^^^^
+app/helpers/custom_failure_helper.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+module CustomFailureHelper
+^
+app/helpers/join_table_cart_items_helper.rb:1:1: C: Style/Documentation: Missing top-level module documentation comment.
+module JoinTableCartItemsHelper
+^^^^^^
+app/helpers/join_table_cart_items_helper.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+module JoinTableCartItemsHelper
+^
+app/helpers/join_table_order_items_helper.rb:1:1: C: Style/Documentation: Missing top-level module documentation comment.
+module JoinTableOrderItemsHelper
+^^^^^^
+app/helpers/join_table_order_items_helper.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+module JoinTableOrderItemsHelper
+^
+app/helpers/favorites_helper.rb:1:1: C: Style/Documentation: Missing top-level module documentation comment.
+module FavoritesHelper
+^^^^^^
+app/helpers/favorites_helper.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+module FavoritesHelper
+^
+test/application_system_test_case.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+require "test_helper"
+^
+test/application_system_test_case.rb:1:9: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/test_helper.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+ENV['RAILS_ENV'] ||= 'test'
+^
+test/test_helper.rb:5:7: C: Style/ClassAndModuleChildren: Use nested module/class definitions instead of compact style.
+class ActiveSupport::TestCase
+      ^^^^^^^^^^^^^^^^^^^^^^^
+test/test_helper.rb:6:81: C: Metrics/LineLength: Line is too long. [82/80]
+  # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
+                                                                                ^^
+test/models/order_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+require 'test_helper'
+^
+test/models/item_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+require 'test_helper'
+^
+test/models/join_table_cart_item_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+require 'test_helper'
+^
+test/models/user_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+require 'test_helper'
+^
+test/models/favorite_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+require 'test_helper'
+^
+test/models/join_table_order_item_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+require 'test_helper'
+^
+test/models/cart_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+require 'test_helper'
+^
+test/controllers/join_table_cart_items_controller_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+require 'test_helper'
+^
+test/controllers/favorites_controller_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+require 'test_helper'
+^
+test/controllers/orders_controller_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+require 'test_helper'
+^
+test/controllers/join_table_order_items_controller_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+require 'test_helper'
+^
+test/controllers/carts_controller_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+require 'test_helper'
+^
+test/controllers/custom_failure_controller_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+require 'test_helper'
+^
+test/controllers/users_controller_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+require 'test_helper'
+^
+test/controllers/users_controller_test.rb:4:8: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "should get index" do
+       ^^^^^^^^^^^^^^^^^^
+test/controllers/users_controller_test.rb:9:8: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "should get show" do
+       ^^^^^^^^^^^^^^^^^
+test/controllers/users_controller_test.rb:14:8: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "should get edit" do
+       ^^^^^^^^^^^^^^^^^
+test/controllers/users_controller_test.rb:19:8: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "should get create" do
+       ^^^^^^^^^^^^^^^^^^^
+test/controllers/users_controller_test.rb:24:8: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "should get update" do
+       ^^^^^^^^^^^^^^^^^^^
+test/controllers/users_controller_test.rb:29:8: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "should get destroy" do
+       ^^^^^^^^^^^^^^^^^^^^
+test/controllers/users_controller_test.rb:33:1: C: Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body end.
+test/controllers/items_controller_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+require 'test_helper'
+^
+test/controllers/items_controller_test.rb:4:8: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "should get index" do
+       ^^^^^^^^^^^^^^^^^^
+test/controllers/items_controller_test.rb:8:1: C: Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body end.
+test/controllers/admins_controller_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+require 'test_helper'
+^
+test/controllers/admins_controller_test.rb:4:8: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "should get index" do
+       ^^^^^^^^^^^^^^^^^^
+test/controllers/admins_controller_test.rb:9:8: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "should get new" do
+       ^^^^^^^^^^^^^^^^
+test/controllers/admins_controller_test.rb:14:8: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "should get create" do
+       ^^^^^^^^^^^^^^^^^^^
+test/controllers/admins_controller_test.rb:19:8: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "should get show" do
+       ^^^^^^^^^^^^^^^^^
+test/controllers/admins_controller_test.rb:23:1: C: Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body end.
+test/controllers/avatars_controller_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+require 'test_helper'
+^
+test/mailers/user_mailer_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+require 'test_helper'
+^
+test/mailers/previews/user_mailer_preview.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+# Preview all emails at http://localhost:3000/rails/mailers/user_mailer
+^
+test/mailers/previews/user_mailer_preview.rb:3:1: C: Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body beginning.
+db/schema.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+# This file is auto-generated from the current state of the database. Instead
+^
+db/schema.rb:3:81: C: Metrics/LineLength: Line is too long. [81/80]
+# incrementally modify your database, and then regenerate this schema definition.
+                                                                                ^
+db/schema.rb:8:81: C: Metrics/LineLength: Line is too long. [86/80]
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
+                                                                                ^^^^^^
+db/schema.rb:11:81: C: Metrics/LineLength: Line is too long. [86/80]
+# It's strongly recommended that you check this file into your version control system.
+                                                                                ^^^^^^
+db/schema.rb:13:1: C: Metrics/BlockLength: Block has too many lines. [99/25]
+ActiveRecord::Schema.define(version: 2019_05_30_144334) do ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:13:38: C: Style/NumericLiterals: Use underscores(_) as thousands separator and separate every 3 digits with them.
+ActiveRecord::Schema.define(version: 2019_05_30_144334) do
+                                     ^^^^^^^^^^^^^^^^^
+db/schema.rb:14:1: C: Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body beginning.
+db/schema.rb:16:20: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  enable_extension "plpgsql"
+                   ^^^^^^^^^
+db/schema.rb:18:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "active_storage_attachments", force: :cascade do |t|
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:19:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "name", null: false
+             ^^^^^^
+db/schema.rb:20:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "record_type", null: false
+             ^^^^^^^^^^^^^
+db/schema.rb:21:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.bigint "record_id", null: false
+             ^^^^^^^^^^^
+db/schema.rb:22:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.bigint "blob_id", null: false
+             ^^^^^^^^^
+db/schema.rb:23:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:24:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+             ^^^^^^^^^
+db/schema.rb:24:32: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:25:13: C: Style/WordArray: Use %w or %W for an array of words.
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:25:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+             ^^^^^^^^^^^^^
+db/schema.rb:25:29: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+                            ^^^^^^^^^^^
+db/schema.rb:25:42: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+                                         ^^^^^^
+db/schema.rb:25:50: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+                                                 ^^^^^^^^^
+db/schema.rb:25:68: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:25:81: C: Metrics/LineLength: Line is too long. [126/80]
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:28:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "active_storage_blobs", force: :cascade do |t|
+               ^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:29:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "key", null: false
+             ^^^^^
+db/schema.rb:30:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "filename", null: false
+             ^^^^^^^^^^
+db/schema.rb:31:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "content_type"
+             ^^^^^^^^^^^^^^
+db/schema.rb:32:12: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.text "metadata"
+           ^^^^^^^^^^
+db/schema.rb:33:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.bigint "byte_size", null: false
+             ^^^^^^^^^^^
+db/schema.rb:34:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "checksum", null: false
+             ^^^^^^^^^^
+db/schema.rb:35:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:36:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+             ^^^^^
+db/schema.rb:36:28: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:39:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "carts", force: :cascade do |t|
+               ^^^^^^^
+db/schema.rb:40:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.bigint "user_id"
+             ^^^^^^^^^
+db/schema.rb:41:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.bigint "order_id"
+             ^^^^^^^^^^
+db/schema.rb:42:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:43:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:44:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["order_id"], name: "index_carts_on_order_id"
+             ^^^^^^^^^^
+db/schema.rb:44:33: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["order_id"], name: "index_carts_on_order_id"
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:45:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["user_id"], name: "index_carts_on_user_id"
+             ^^^^^^^^^
+db/schema.rb:45:32: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["user_id"], name: "index_carts_on_user_id"
+                               ^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:48:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "favorites", force: :cascade do |t|
+               ^^^^^^^^^^^
+db/schema.rb:49:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.bigint "user_id"
+             ^^^^^^^^^
+db/schema.rb:50:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.bigint "item_id"
+             ^^^^^^^^^
+db/schema.rb:51:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:52:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:53:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["item_id"], name: "index_favorites_on_item_id"
+             ^^^^^^^^^
+db/schema.rb:53:32: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["item_id"], name: "index_favorites_on_item_id"
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:54:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+             ^^^^^^^^^
+db/schema.rb:54:32: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:57:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "friendly_id_slugs", force: :cascade do |t|
+               ^^^^^^^^^^^^^^^^^^^
+db/schema.rb:58:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "slug", null: false
+             ^^^^^^
+db/schema.rb:59:15: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer "sluggable_id", null: false
+              ^^^^^^^^^^^^^^
+db/schema.rb:60:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "sluggable_type", limit: 50
+             ^^^^^^^^^^^^^^^^
+db/schema.rb:61:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "scope"
+             ^^^^^^^
+db/schema.rb:62:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at"
+               ^^^^^^^^^^^^
+db/schema.rb:63:13: C: Style/WordArray: Use %w or %W for an array of words.
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:63:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+             ^^^^^^
+db/schema.rb:63:22: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+                     ^^^^^^^^^^^^^^^^
+db/schema.rb:63:40: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+                                       ^^^^^^^
+db/schema.rb:63:56: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:63:81: C: Metrics/LineLength: Line is too long. [131/80]
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:64:13: C: Style/WordArray: Use %w or %W for an array of words.
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:64:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+             ^^^^^^
+db/schema.rb:64:22: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+                     ^^^^^^^^^^^^^^^^
+db/schema.rb:64:47: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:64:81: C: Metrics/LineLength: Line is too long. [98/80]
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+                                                                                ^^^^^^^^^^^^^^^^^^
+db/schema.rb:65:13: C: Style/WordArray: Use %w or %W for an array of words.
+    t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:65:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+             ^^^^^^^^^^^^^^^^
+db/schema.rb:65:32: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+                               ^^^^^^^^^^^^^^
+db/schema.rb:65:55: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:65:81: C: Metrics/LineLength: Line is too long. [114/80]
+    t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:68:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "items", force: :cascade do |t|
+               ^^^^^^^
+db/schema.rb:69:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "title"
+             ^^^^^^^
+db/schema.rb:70:12: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.text "description"
+           ^^^^^^^^^^^^^
+db/schema.rb:71:13: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.float "price"
+            ^^^^^^^
+db/schema.rb:72:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "image_url"
+             ^^^^^^^^^^^
+db/schema.rb:73:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:74:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:75:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "slug"
+             ^^^^^^
+db/schema.rb:76:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "breed"
+             ^^^^^^^
+db/schema.rb:77:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["slug"], name: "index_items_on_slug", unique: true
+             ^^^^^^
+db/schema.rb:77:29: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["slug"], name: "index_items_on_slug", unique: true
+                            ^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:80:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "join_table_cart_items", force: :cascade do |t|
+               ^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:81:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.bigint "cart_id"
+             ^^^^^^^^^
+db/schema.rb:82:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.bigint "item_id"
+             ^^^^^^^^^
+db/schema.rb:83:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:84:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:85:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["cart_id"], name: "index_join_table_cart_items_on_cart_id"
+             ^^^^^^^^^
+db/schema.rb:85:32: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["cart_id"], name: "index_join_table_cart_items_on_cart_id"
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:86:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["item_id"], name: "index_join_table_cart_items_on_item_id"
+             ^^^^^^^^^
+db/schema.rb:86:32: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["item_id"], name: "index_join_table_cart_items_on_item_id"
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:89:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "join_table_order_items", force: :cascade do |t|
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:90:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.bigint "order_id"
+             ^^^^^^^^^^
+db/schema.rb:91:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.bigint "item_id"
+             ^^^^^^^^^
+db/schema.rb:92:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:93:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:94:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["item_id"], name: "index_join_table_order_items_on_item_id"
+             ^^^^^^^^^
+db/schema.rb:94:32: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["item_id"], name: "index_join_table_order_items_on_item_id"
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:95:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["order_id"], name: "index_join_table_order_items_on_order_id"
+             ^^^^^^^^^^
+db/schema.rb:95:33: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["order_id"], name: "index_join_table_order_items_on_order_id"
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:98:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "orders", force: :cascade do |t|
+               ^^^^^^^^
+db/schema.rb:99:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.bigint "user_id"
+             ^^^^^^^^^
+db/schema.rb:100:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:101:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:102:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["user_id"], name: "index_orders_on_user_id"
+             ^^^^^^^^^
+db/schema.rb:102:32: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["user_id"], name: "index_orders_on_user_id"
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:105:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "users", force: :cascade do |t|
+               ^^^^^^^
+db/schema.rb:106:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "email", default: "", null: false
+             ^^^^^^^
+db/schema.rb:106:32: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "email", default: "", null: false
+                               ^^
+db/schema.rb:107:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "encrypted_password", default: "", null: false
+             ^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:107:45: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "encrypted_password", default: "", null: false
+                                            ^^
+db/schema.rb:108:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "first_name"
+             ^^^^^^^^^^^^
+db/schema.rb:109:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "last_name"
+             ^^^^^^^^^^^
+db/schema.rb:110:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "reset_password_token"
+             ^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:111:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "reset_password_sent_at"
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:112:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "remember_created_at"
+               ^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:113:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:114:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:115:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string "slug"
+             ^^^^^^
+db/schema.rb:116:15: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.boolean "admin", default: false
+              ^^^^^^^
+db/schema.rb:117:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["slug"], name: "index_users_on_slug", unique: true
+             ^^^^^^
+db/schema.rb:117:29: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["slug"], name: "index_users_on_slug", unique: true
+                            ^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:120:19: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:120:49: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+                                                ^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:120:81: C: Metrics/LineLength: Line is too long. [89/80]
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+                                                                                ^^^^^^^^^
+db/schema.rb:120:81: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+                                                                                ^^^^^^^^^
+db/schema.rb:121:19: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_foreign_key "join_table_cart_items", "carts"
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:121:44: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_foreign_key "join_table_cart_items", "carts"
+                                           ^^^^^^^
+db/schema.rb:122:19: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_foreign_key "join_table_cart_items", "items"
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:122:44: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_foreign_key "join_table_cart_items", "items"
+                                           ^^^^^^^
+db/schema.rb:123:19: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_foreign_key "join_table_order_items", "items"
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:123:45: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_foreign_key "join_table_order_items", "items"
+                                            ^^^^^^^
+db/schema.rb:124:19: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_foreign_key "join_table_order_items", "orders"
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:124:45: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_foreign_key "join_table_order_items", "orders"
+                                            ^^^^^^^^
+db/schema.rb:125:19: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_foreign_key "orders", "users"
+                  ^^^^^^^^
+db/schema.rb:125:29: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_foreign_key "orders", "users"
+                            ^^^^^^^
+db/migrate/20190529145658_add_slug_to_items.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class AddSlugToItems < ActiveRecord::Migration[5.2]
+^^^^^
+db/migrate/20190529145658_add_slug_to_items.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class AddSlugToItems < ActiveRecord::Migration[5.2]
+^
+db/migrate/20190528213901_create_join_table_order_items.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class CreateJoinTableOrderItems < ActiveRecord::Migration[5.2]
+^^^^^
+db/migrate/20190528213901_create_join_table_order_items.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class CreateJoinTableOrderItems < ActiveRecord::Migration[5.2]
+^
+db/migrate/20190530144334_add_admin_to_users.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class AddAdminToUsers < ActiveRecord::Migration[5.2]
+^^^^^
+db/migrate/20190530144334_add_admin_to_users.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class AddAdminToUsers < ActiveRecord::Migration[5.2]
+^
+db/migrate/20190530133833_add_breed_to_items.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class AddBreedToItems < ActiveRecord::Migration[5.2]
+^^^^^
+db/migrate/20190530133833_add_breed_to_items.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class AddBreedToItems < ActiveRecord::Migration[5.2]
+^
+db/migrate/20190530134540_create_favorites.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class CreateFavorites < ActiveRecord::Migration[5.2]
+^^^^^
+db/migrate/20190530134540_create_favorites.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class CreateFavorites < ActiveRecord::Migration[5.2]
+^
+db/migrate/20190529145645_add_slug_to_users.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class AddSlugToUsers < ActiveRecord::Migration[5.2]
+^^^^^
+db/migrate/20190529145645_add_slug_to_users.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class AddSlugToUsers < ActiveRecord::Migration[5.2]
+^
+db/migrate/20190528090811_create_carts.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class CreateCarts < ActiveRecord::Migration[5.2]
+^^^^^
+db/migrate/20190528090811_create_carts.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class CreateCarts < ActiveRecord::Migration[5.2]
+^
+db/migrate/20190527085048_create_items.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class CreateItems < ActiveRecord::Migration[5.2]
+^^^^^
+db/migrate/20190527085048_create_items.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class CreateItems < ActiveRecord::Migration[5.2]
+^
+db/migrate/20190529090134_create_active_storage_tables.active_storage.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+# This migration comes from active_storage (originally 20170806125915)
+^
+db/migrate/20190529090134_create_active_storage_tables.active_storage.rb:3:3: C: Metrics/AbcSize: Assignment Branch Condition size for change is too high. [16/15]
+  def change ...
+  ^^^^^^^^^^
+db/migrate/20190529090134_create_active_storage_tables.active_storage.rb:3:3: C: Metrics/MethodLength: Method has too many lines. [18/10]
+  def change ...
+  ^^^^^^^^^^
+db/migrate/20190529090134_create_active_storage_tables.active_storage.rb:13:16: C: Layout/SpaceInsideArrayLiteralBrackets: Do not use space inside array brackets.
+      t.index [ :key ], unique: true
+               ^
+db/migrate/20190529090134_create_active_storage_tables.active_storage.rb:13:21: C: Layout/SpaceInsideArrayLiteralBrackets: Do not use space inside array brackets.
+      t.index [ :key ], unique: true
+                    ^
+db/migrate/20190529090134_create_active_storage_tables.active_storage.rb:23:15: C: Style/SymbolArray: Use %i or %I for an array of symbols.
+      t.index [ :record_type, :record_id, :name, :blob_id ], name: "index_active_storage_attachments_uniqueness", unique: true
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20190529090134_create_active_storage_tables.active_storage.rb:23:16: C: Layout/SpaceInsideArrayLiteralBrackets: Do not use space inside array brackets.
+      t.index [ :record_type, :record_id, :name, :blob_id ], name: "index_active_storage_attachments_uniqueness", unique: true
+               ^
+db/migrate/20190529090134_create_active_storage_tables.active_storage.rb:23:58: C: Layout/SpaceInsideArrayLiteralBrackets: Do not use space inside array brackets.
+      t.index [ :record_type, :record_id, :name, :blob_id ], name: "index_active_storage_attachments_uniqueness", unique: true
+                                                         ^
+db/migrate/20190529090134_create_active_storage_tables.active_storage.rb:23:68: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      t.index [ :record_type, :record_id, :name, :blob_id ], name: "index_active_storage_attachments_uniqueness", unique: true
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20190529090134_create_active_storage_tables.active_storage.rb:23:81: C: Metrics/LineLength: Line is too long. [126/80]
+      t.index [ :record_type, :record_id, :name, :blob_id ], name: "index_active_storage_attachments_uniqueness", unique: true
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20190527093139_devise_create_users.rb:3:1: C: Style/Documentation: Missing top-level class documentation comment.
+class DeviseCreateUsers < ActiveRecord::Migration[5.2]
+^^^^^
+db/migrate/20190527093139_devise_create_users.rb:7:59: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      t.string :email,              null: false, default: ""
+                                                          ^^
+db/migrate/20190527093139_devise_create_users.rb:8:59: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      t.string :encrypted_password, null: false, default: ""
+                                                          ^^
+db/migrate/20190527093139_devise_create_users.rb:33:81: C: Metrics/LineLength: Line is too long. [104/80]
+      # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20190527093139_devise_create_users.rb:37:1: C: Layout/EmptyLines: Extra blank line detected.
+db/migrate/20190528095053_create_orders.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class CreateOrders < ActiveRecord::Migration[5.2]
+^^^^^
+db/migrate/20190528095053_create_orders.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class CreateOrders < ActiveRecord::Migration[5.2]
+^
+db/migrate/20190528092126_create_join_table_cart_items.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class CreateJoinTableCartItems < ActiveRecord::Migration[5.2]
+^^^^^
+db/migrate/20190528092126_create_join_table_cart_items.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class CreateJoinTableCartItems < ActiveRecord::Migration[5.2]
+^
+db/migrate/20190529145706_create_friendly_id_slugs.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+MIGRATION_CLASS =
+^
+db/migrate/20190529145706_create_friendly_id_slugs.rb:3:81: C: Metrics/LineLength: Line is too long. [94/80]
+    ActiveRecord::Migration["#{ActiveRecord::VERSION::MAJOR}.#{ActiveRecord::VERSION::MINOR}"]
+                                                                                ^^^^^^^^^^^^^^
+db/migrate/20190529145706_create_friendly_id_slugs.rb:8:1: C: Style/Documentation: Missing top-level class documentation comment.
+class CreateFriendlyIdSlugs < MIGRATION_CLASS
+^^^^^
+db/migrate/20190529145706_create_friendly_id_slugs.rb:11:35: C: Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+      t.string   :slug,           :null => false
+                                  ^^^^^^^^
+db/migrate/20190529145706_create_friendly_id_slugs.rb:12:35: C: Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+      t.integer  :sluggable_id,   :null => false
+                                  ^^^^^^^^
+db/migrate/20190529145706_create_friendly_id_slugs.rb:13:35: C: Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+      t.string   :sluggable_type, :limit => 50
+                                  ^^^^^^^^^
+db/migrate/20190529145706_create_friendly_id_slugs.rb:17:35: C: Style/SymbolArray: Use %i or %I for an array of symbols.
+    add_index :friendly_id_slugs, [:sluggable_type, :sluggable_id]
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20190529145706_create_friendly_id_slugs.rb:18:35: C: Style/SymbolArray: Use %i or %I for an array of symbols.
+    add_index :friendly_id_slugs, [:slug, :sluggable_type], length: { slug: 140, sluggable_type: 50 }
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20190529145706_create_friendly_id_slugs.rb:18:81: C: Metrics/LineLength: Line is too long. [101/80]
+    add_index :friendly_id_slugs, [:slug, :sluggable_type], length: { slug: 140, sluggable_type: 50 }
+                                                                                ^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20190529145706_create_friendly_id_slugs.rb:19:35: C: Style/SymbolArray: Use %i or %I for an array of symbols.
+    add_index :friendly_id_slugs, [:slug, :sluggable_type, :scope], length: { slug: 70, sluggable_type: 50, scope: 70 }, unique: true
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20190529145706_create_friendly_id_slugs.rb:19:81: C: Metrics/LineLength: Line is too long. [133/80]
+    add_index :friendly_id_slugs, [:slug, :sluggable_type, :scope], length: { slug: 70, sluggable_type: 50, scope: 70 }, unique: true
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+# This file should contain all the record creation needed to seed the database with its default values.
+^
+db/seeds.rb:1:81: C: Metrics/LineLength: Line is too long. [103/80]
+# This file should contain all the record creation needed to seed the database with its default values.
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:2:81: C: Metrics/LineLength: Line is too long. [111/80]
+# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:6:81: C: Metrics/LineLength: Line is too long. [81/80]
+#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+                                                                                ^
+db/seeds.rb:26:40: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    title: Faker::Creature::Cat.name + " " + Faker::Creature::Cat.name,
+                                       ^^^
+db/seeds.rb:27:18: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    description: "lorem ipsum",
+                 ^^^^^^^^^^^^^
+db/seeds.rb:35:1: C: Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+	first_name = Faker::Name.first_name
+^
+db/seeds.rb:35:1: C: Layout/Tab: Tab detected.
+	first_name = Faker::Name.first_name
+^
+db/seeds.rb:36:1: C: Layout/Tab: Tab detected.
+	last_name = Faker::Name.last_name
+^
+db/seeds.rb:37:1: C: Layout/Tab: Tab detected.
+	user = User.create!(
+^
+db/seeds.rb:38:1: C: Layout/Tab: Tab detected.
+		first_name: first_name,
+^^
+db/seeds.rb:38:3: C: Layout/IndentFirstArgument: Indent the first argument one step more than the start of the previous line.
+		first_name: first_name, ...
+  ^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:39:1: C: Layout/Tab: Tab detected.
+		last_name: last_name,
+^^
+db/seeds.rb:40:1: C: Layout/Tab: Tab detected.
+		email: first_name + last_name + "@yopmail.com",
+^^
+db/seeds.rb:40:35: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+		email: first_name + last_name + "@yopmail.com",
+                                  ^^^^^^^^^^^^^^
+db/seeds.rb:41:1: C: Layout/Tab: Tab detected.
+		password: "foobar"
+^^
+db/seeds.rb:41:13: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+		password: "foobar"
+            ^^^^^^^^
+db/seeds.rb:42:1: C: Layout/Tab: Tab detected.
+		)
+^^
+db/seeds.rb:42:3: C: Layout/ClosingParenthesisIndentation: Indent ) to column 0 (not 2)
+		)
+  ^
+db/seeds.rb:43:5: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+    Cart.create!( ...
+    ^^^^^^^^^^^^^
+bin/bundle:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+#!/usr/bin/env ruby
+^
+bin/update:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+#!/usr/bin/env ruby
+^
+bin/update:3:1: C: Style/MixinUsage: include is used at the top level. Use inside class or module.
+include FileUtils
+^^^^^^^^^^^^^^^^^
+bin/rails:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+#!/usr/bin/env ruby
+^
+bin/rake:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+#!/usr/bin/env ruby
+^
+bin/setup:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+#!/usr/bin/env ruby
+^
+bin/setup:3:1: C: Style/MixinUsage: include is used at the top level. Use inside class or module.
+include FileUtils
+^^^^^^^^^^^^^^^^^
+bin/spring:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+#!/usr/bin/env ruby
+^
+bin/spring:11:56: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  spring = lockfile.specs.detect { |spec| spec.name == "spring" }
+                                                       ^^^^^^^^
+bin/yarn:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+#!/usr/bin/env ruby
+^
+bin/yarn:4:3: C: Style/RedundantBegin: Redundant begin block detected.
+  begin
+  ^^^^^
+bin/yarn:5:10: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    exec "yarnpkg", *ARGV
+         ^^^^^^^^^
+bin/yarn:7:5: C: Style/StderrPuts: Use warn instead of $stderr.puts to allow such output to be disabled.
+    $stderr.puts "Yarn executable was not detected in the system."
+    ^^^^^^^^^^^^
+bin/yarn:7:18: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    $stderr.puts "Yarn executable was not detected in the system."
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bin/yarn:8:5: C: Style/StderrPuts: Use warn instead of $stderr.puts to allow such output to be disabled.
+    $stderr.puts "Download Yarn at https://yarnpkg.com/en/docs/install"
+    ^^^^^^^^^^^^
+bin/yarn:8:18: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    $stderr.puts "Download Yarn at https://yarnpkg.com/en/docs/install"
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/custom_failure.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class CustomFailure < Devise::FailureApp
+^^^^^
+lib/custom_failure.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+class CustomFailure < Devise::FailureApp
+^
+lib/custom_failure.rb:3:3: C: Layout/IndentationWidth: Use 2 (not 1) spaces for indentation.
+   root_url
+  ^
+lib/custom_failure.rb:4:2: W: Layout/DefEndAlignment: end at 4, 1 is not aligned with def at 2, 2.
+ end
+ ^^^
+lib/custom_failure.rb:15:1: C: Layout/TrailingBlankLines: 1 trailing blank lines detected.
+config/environment.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+# Load the Rails application.
+^
+config/application.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+require_relative 'boot'
+^
+config/application.rb:10:3: C: Style/Documentation: Missing top-level class documentation comment.
+  class Application < Rails::Application
+  ^^^^^
+config/application.rb:14:81: C: Metrics/LineLength: Line is too long. [82/80]
+    # Settings in config/environments/* take precedence over those specified here.
+                                                                                ^^
+config/puma.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+# Puma can serve each request in a thread from an internal thread pool.
+^
+config/puma.rb:7:27: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }
+                          ^^^^^^^^^^^^^^^^^^^
+config/puma.rb:10:81: C: Metrics/LineLength: Line is too long. [85/80]
+# Specifies the `port` that Puma will listen on to receive requests; default is 3000.
+                                                                                ^^^^^
+config/puma.rb:12:23: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+port        ENV.fetch("PORT") { 3000 }
+                      ^^^^^^
+config/puma.rb:16:23: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+environment ENV.fetch("RAILS_ENV") { "development" }
+                      ^^^^^^^^^^^
+config/puma.rb:16:38: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+environment ENV.fetch("RAILS_ENV") { "development" }
+                                     ^^^^^^^^^^^^^
+config/boot.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../Gemfile', __dir__)
+^
+config/routes.rb:1:1: C: Metrics/BlockLength: Block has too many lines. [29/25]
+Rails.application.routes.draw do ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/routes.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+Rails.application.routes.draw do
+^
+config/routes.rb:21:19: C: Layout/ExtraSpacing: Unnecessary spacing detected.
+    post 'search',  :on => :collection
+                  ^
+config/routes.rb:21:21: C: Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    post 'search',  :on => :collection
+                    ^^^^^^
+config/routes.rb:24:1: C: Layout/EmptyLines: Extra blank line detected.
+config/routes.rb:25:4: C: Layout/CommentIndentation: Incorrect indentation detected (column 3 instead of 2).
+   # For the controller to be found, first declare the admins controller before namespace declaration
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/routes.rb:25:81: C: Metrics/LineLength: Line is too long. [101/80]
+   # For the controller to be found, first declare the admins controller before namespace declaration
+                                                                                ^^^^^^^^^^^^^^^^^^^^^
+config/routes.rb:30:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    root to: "admins#index"
+             ^^^^^^^^^^^^^^
+config/routes.rb:35:1: C: Layout/EmptyLines: Extra blank line detected.
+config/routes.rb:36:1: C: Layout/EmptyLines: Extra blank line detected.
+config/routes.rb:44:1: C: Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body end.
+config/initializers/wrap_parameters.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/wrap_parameters.rb:6:81: C: Metrics/LineLength: Line is too long. [96/80]
+# Enable parameter wrapping for JSON. You can disable this by setting :format to an empty array.
+                                                                                ^^^^^^^^^^^^^^^^
+config/initializers/assets.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/assets.rb:10:42: C: Rails/FilePath: Please use Rails.root.join('path', 'to') instead.
+Rails.application.config.assets.paths << Rails.root.join("app/assets/videos")
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/assets.rb:10:58: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+Rails.application.config.assets.paths << Rails.root.join("app/assets/videos")
+                                                         ^^^^^^^^^^^^^^^^^^^
+config/initializers/mime_types.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/cookies_serializer.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/inflections.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/filter_parameter_logging.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/content_security_policy.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/content_security_policy.rb:20:81: C: Metrics/LineLength: Line is too long. [107/80]
+# Rails.application.config.content_security_policy_nonce_generator = -> request { SecureRandom.base64(16) }
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/stripe.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+Rails.configuration.stripe = {
+^
+config/initializers/stripe.rb:2:3: C: Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+  :publishable_key => ENV['PUBLISHABLE_KEY'],
+  ^^^^^^^^^^^^^^^^^^^
+config/initializers/stripe.rb:3:3: C: Layout/AlignHash: Align the elements of a hash literal if they span more than one line.
+  :secret_key      => ENV['SECRET_KEY']
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/stripe.rb:3:3: C: Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+  :secret_key      => ENV['SECRET_KEY']
+  ^^^^^^^^^^^^^^^^^^^
+config/initializers/stripe.rb:6:57: C: Layout/TrailingBlankLines: Final newline missing.
+Stripe.api_key = Rails.configuration.stripe[:secret_key]
+                                                        
+config/initializers/backtrace_silencers.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/backtrace_silencers.rb:3:81: C: Metrics/LineLength: Line is too long. [107/80]
+# You can add backtrace silencers for libraries that you're using but don't wish to see in your backtraces.
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/backtrace_silencers.rb:6:81: C: Metrics/LineLength: Line is too long. [112/80]
+# You can also remove all the silencers if you're trying to debug a problem that might stem from framework code.
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/friendly_id.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+# FriendlyId Global Configuration
+^
+config/initializers/friendly_id.rb:19:27: C: Style/PercentLiteralDelimiters: %w-literals should be delimited by [ and ].
+  config.reserved_words = %w(new edit index session login logout users admin ...
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/friendly_id.rb:20:5: C: Layout/AlignArray: Align the elements of an array literal if they span more than one line.
+    stylesheets assets javascripts images)
+    ^^^^^^^^^^^
+config/initializers/friendly_id.rb:21:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+config/initializers/friendly_id.rb:22:81: C: Metrics/LineLength: Line is too long. [84/80]
+  # This adds an option to treat reserved words as conflicts rather than exceptions.
+                                                                                ^^^^
+config/initializers/friendly_id.rb:23:81: C: Metrics/LineLength: Line is too long. [83/80]
+  # When there is no good candidate, a UUID will be appended, matching the existing
+                                                                                ^^^
+config/initializers/friendly_id.rb:65:81: C: Metrics/LineLength: Line is too long. [82/80]
+  # When FriendlyId can not generate a unique ID from your base method, it appends
+                                                                                ^^
+config/initializers/friendly_id.rb:66:81: C: Metrics/LineLength: Line is too long. [83/80]
+  # a UUID, separated by a single dash. You can configure the character used as the
+                                                                                ^^^
+config/initializers/friendly_id.rb:67:81: C: Metrics/LineLength: Line is too long. [82/80]
+  # separator. If you're upgrading from FriendlyId 4, you may wish to replace this
+                                                                                ^^
+config/initializers/friendly_id.rb:73:81: C: Metrics/LineLength: Line is too long. [81/80]
+  # configures the sequence separator, or else FriendlyId will raise an undefined
+                                                                                ^
+config/initializers/friendly_id.rb:85:81: C: Metrics/LineLength: Line is too long. [82/80]
+  # Note: Use(include) Slugged module in the config if using the anonymous module.
+                                                                                ^^
+config/initializers/friendly_id.rb:88:81: C: Metrics/LineLength: Line is too long. [86/80]
+  # overrides the `should_generate_new_friendly_id?` method from the anonymous module.
+                                                                                ^^^^^^
+config/initializers/application_controller_renderer.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/devise.rb:11:81: C: Metrics/LineLength: Line is too long. [154/80]
+  # config.secret_key = 'd3209e3252596503b5ec8e80cb174fd63cd656ef757d6926de0e08dbd824d90fc9e187a58f9930c4d93ec821d4906d6611a84f603360a7c4ab335faacde2ae73'
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/devise.rb:21:81: C: Metrics/LineLength: Line is too long. [85/80]
+  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+                                                                                ^^^^^
+config/initializers/devise.rb:40:81: C: Metrics/LineLength: Line is too long. [83/80]
+  # session. If you need permissions, you should implement that in a before filter.
+                                                                                ^^^
+config/initializers/devise.rb:45:81: C: Metrics/LineLength: Line is too long. [84/80]
+  # Configure parameters from the request object used for authentication. Each entry
+                                                                                ^^^^
+config/initializers/devise.rb:47:81: C: Metrics/LineLength: Line is too long. [85/80]
+  # find_for_authentication method and considered in your model lookup. For instance,
+                                                                                ^^^^^
+config/initializers/devise.rb:48:81: C: Metrics/LineLength: Line is too long. [88/80]
+  # if you set :request_keys to [:subdomain], :subdomain will be used on authentication.
+                                                                                ^^^^^^^^
+config/initializers/devise.rb:49:81: C: Metrics/LineLength: Line is too long. [89/80]
+  # The same considerations mentioned for authentication_keys also apply to request_keys.
+                                                                                ^^^^^^^^^
+config/initializers/devise.rb:59:81: C: Metrics/LineLength: Line is too long. [85/80]
+  # modifying a user and when used to authenticate or find a user. Default is :email.
+                                                                                ^^^^^
+config/initializers/devise.rb:63:81: C: Metrics/LineLength: Line is too long. [81/80]
+  # It can be set to an array that will enable params authentication only for the
+                                                                                ^
+config/initializers/devise.rb:64:81: C: Metrics/LineLength: Line is too long. [85/80]
+  # given strategies, for example, `config.params_authenticatable = [:database]` will
+                                                                                ^^^^^
+config/initializers/devise.rb:70:81: C: Metrics/LineLength: Line is too long. [83/80]
+  # given strategies, for example, `config.http_authenticatable = [:database]` will
+                                                                                ^^^
+config/initializers/devise.rb:72:81: C: Metrics/LineLength: Line is too long. [84/80]
+  # :database      = Support basic authentication with authentication key + password
+                                                                                ^^^^
+config/initializers/devise.rb:107:81: C: Metrics/LineLength: Line is too long. [86/80]
+  # using other algorithms, it sets how many times you want the password to be hashed.
+                                                                                ^^^^^^
+config/initializers/devise.rb:109:81: C: Metrics/LineLength: Line is too long. [82/80]
+  # Limiting the stretches to just one in testing will increase the performance of
+                                                                                ^^
+config/initializers/devise.rb:111:81: C: Metrics/LineLength: Line is too long. [82/80]
+  # a value less than 10 in other environments. Note that, for bcrypt (the default
+                                                                                ^^
+config/initializers/devise.rb:112:81: C: Metrics/LineLength: Line is too long. [83/80]
+  # algorithm), the cost increases exponentially with the number of stretches (e.g.
+                                                                                ^^^
+config/initializers/devise.rb:113:81: C: Metrics/LineLength: Line is too long. [83/80]
+  # a value of 20 is already extremely slow: approx. 60 seconds for 1 calculation).
+                                                                                ^^^
+config/initializers/devise.rb:117:81: C: Metrics/LineLength: Line is too long. [150/80]
+  # config.pepper = '7afff332d2e2385b14284f7497656d326c2e84edc17c6f067ca06402d41bd3e61fad26b8312057e23368713ba084c5c1df8a6ea5661fc1d302c5e7319f2aae3a'
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/devise.rb:145:81: C: Metrics/LineLength: Line is too long. [86/80]
+  # initial account confirmation) to be applied. Requires additional unconfirmed_email
+                                                                                ^^^^^^
+config/initializers/devise.rb:147:81: C: Metrics/LineLength: Line is too long. [84/80]
+  # unconfirmed_email column, and copied to email column on successful confirmation.
+                                                                                ^^^^
+config/initializers/devise.rb:183:81: C: Metrics/LineLength: Line is too long. [85/80]
+  # :failed_attempts = Locks an account after a number of failed attempts to sign in.
+                                                                                ^^^^^
+config/initializers/devise.rb:192:81: C: Metrics/LineLength: Line is too long. [83/80]
+  # :time  = Re-enables login after a certain amount of time (see :unlock_in below)
+                                                                                ^^^
+config/initializers/devise.rb:217:81: C: Metrics/LineLength: Line is too long. [84/80]
+  # When set to false, does not sign a user in automatically after their password is
+                                                                                ^^^^
+config/initializers/devise.rb:222:81: C: Metrics/LineLength: Line is too long. [86/80]
+  # Allow you to use another hashing or encryption algorithm besides bcrypt (default).
+                                                                                ^^^^^^
+config/initializers/devise.rb:224:81: C: Metrics/LineLength: Line is too long. [81/80]
+  # :clearance_sha1, :authlogic_sha512 (then you should set stretches above to 20
+                                                                                ^
+config/initializers/devise.rb:232:81: C: Metrics/LineLength: Line is too long. [82/80]
+  # Turn scoped views on. Before rendering "sessions/new", it will first check for
+                                                                                ^^
+config/initializers/devise.rb:266:81: C: Metrics/LineLength: Line is too long. [82/80]
+  # change the failure app, you can configure them inside the config.warden block.
+                                                                                ^^
+config/initializers/devise.rb:274:81: C: Metrics/LineLength: Line is too long. [81/80]
+  # When using Devise inside an engine, let's call it `MyEngine`, and this engine
+                                                                                ^
+config/initializers/devise.rb:288:81: C: Metrics/LineLength: Line is too long. [116/80]
+  # If your app is using Turbolinks, Turbolinks::Controller needs to be included to make redirection work correctly:
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/devise.rb:296:81: C: Metrics/LineLength: Line is too long. [84/80]
+  # When set to false, does not sign a user in automatically after their password is
+                                                                                ^^^^
+config/initializers/devise.rb:297:81: C: Metrics/LineLength: Line is too long. [94/80]
+  # changed. Defaults to true, so a user is signed in automatically after changing a password.
+                                                                                ^^^^^^^^^^^^^^
+config/spring.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+%w[
+^
+config/environments/development.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+Rails.application.configure do
+^
+config/environments/development.rb:2:81: C: Metrics/LineLength: Line is too long. [85/80]
+  # Settings specified here will take precedence over those in config/application.rb.
+                                                                                ^^^^^
+config/environments/development.rb:30:81: C: Metrics/LineLength: Line is too long. [86/80]
+  # Store uploaded files on the local file system (see config/storage.yml for options)
+                                                                                ^^^^^^
+config/environments/development.rb:63:1: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+config.action_mailer.perform_deliveries = false
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/environments/test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+Rails.application.configure do
+^
+config/environments/test.rb:2:81: C: Metrics/LineLength: Line is too long. [85/80]
+  # Settings specified here will take precedence over those in config/application.rb.
+                                                                                ^^^^^
+config/environments/production.rb:1:1: C: Style/FrozenStringLiteralComment: Missing magic comment # frozen_string_literal: true.
+Rails.application.configure do
+^
+config/environments/production.rb:2:81: C: Metrics/LineLength: Line is too long. [85/80]
+  # Settings specified here will take precedence over those in config/application.rb.
+                                                                                ^^^^^
+config/environments/production.rb:17:81: C: Metrics/LineLength: Line is too long. [87/80]
+  # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
+                                                                                ^^^^^^^
+config/environments/production.rb:18:81: C: Metrics/LineLength: Line is too long. [97/80]
+  # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
+                                                                                ^^^^^^^^^^^^^^^^^
+config/environments/production.rb:32:81: C: Metrics/LineLength: Line is too long. [102/80]
+  # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^
+config/environments/production.rb:41:81: C: Metrics/LineLength: Line is too long. [86/80]
+  # Store uploaded files on the local file system (see config/storage.yml for options)
+                                                                                ^^^^^^
+config/environments/production.rb:47:81: C: Metrics/LineLength: Line is too long. [96/80]
+  # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
+                                                                                ^^^^^^^^^^^^^^^^
+config/environments/production.rb:49:81: C: Metrics/LineLength: Line is too long. [96/80]
+  # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
+                                                                                ^^^^^^^^^^^^^^^^
+config/environments/production.rb:57:22: C: Layout/SpaceInsideArrayLiteralBrackets: Do not use space inside array brackets.
+  config.log_tags = [ :request_id ]
+                     ^
+config/environments/production.rb:57:34: C: Layout/SpaceInsideArrayLiteralBrackets: Do not use space inside array brackets.
+  config.log_tags = [ :request_id ]
+                                 ^
+config/environments/production.rb:62:81: C: Metrics/LineLength: Line is too long. [83/80]
+  # Use a real queuing backend for Active Job (and separate queues per environment)
+                                                                                ^^^
+config/environments/production.rb:69:81: C: Metrics/LineLength: Line is too long. [100/80]
+  # Set this to true and configure the email server for immediate delivery to raise delivery errors.
+                                                                                ^^^^^^^^^^^^^^^^^^^^
+config/environments/production.rb:84:81: C: Metrics/LineLength: Line is too long. [83/80]
+  # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
+                                                                                ^^^
+config/environments/production.rb:86:10: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  if ENV["RAILS_LOG_TO_STDOUT"].present?
+         ^^^^^^^^^^^^^^^^^^^^^
+
+103 files inspected, 606 offenses detected
