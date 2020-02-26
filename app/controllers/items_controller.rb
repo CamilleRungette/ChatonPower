@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
   	@items = Item.all
     @items = Item.where(breed: params[:breed]) if params[:breed] != nil
     @breed = params[:breed] if params[:breed] != nil
+
   end
 
   def show
@@ -21,7 +22,10 @@ class ItemsController < ApplicationController
     if user_signed_in?
       @cart = current_user.cart.id
       JoinTableCartItem.create!(cart_id: @cart, item_id: @item.id)
-      redirect_to root_path
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js { }
+      end
     else
       redirect_to root_path
     end
